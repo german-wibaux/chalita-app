@@ -1,0 +1,34 @@
+.footer-short {
+    padding: 1rem !important;
+    background-color: rgb(31, 26, 23) !important;
+}
+
+.custom-footer{
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.row {
+    justify-content: center;
+}
+
+.row > img {
+    height: 2rem;
+}
+
+.bg-gray{
+    background: white !important;
+}
+
+.col-12 > img {
+    width: 17rem;
+}
+
+a:hover {
+    color: #11692f;
+}
+
+.map-foo > h6 {
+    color: black;
+}

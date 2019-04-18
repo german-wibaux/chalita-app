@@ -1,0 +1,194 @@
+<div class="main-container">
+  <section class="space-sm bg-white" >
+      <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light">
+          <a class="navbar-brand" href="/"> <img src="/assets/img/chalita/logo-img.png" alt=""> </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a class="" href="/">Inicio
+                  <!-- <span class="sr-only">(current)</span> -->
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="" >Alquileres</a>
+              </li>
+              <li class="nav-item">
+                <a class=" " >Ventas</a>
+              </li>
+              <li class="nav-item">
+                <a class=" " >Turismo</a>
+              </li>
+              <li class="nav-item">
+                <a class=" " >Desarrollos</a>
+              </li>
+              <li class="nav-item">
+                <a class=" " >Nosotros</a>
+              </li>
+              <li class="nav-item">
+                <!-- <a class=" " ></a> -->
+                <!-- Button trigger modal -->
+              <a class="nav-item" data-toggle="modal" data-target="#exampleModal">
+                Contacto
+              </a>
+              </li>
+              <li class="nav-item">
+                  <a class=" " routerLink='/login' fragment="acces"  *ngIf='!isLoggedIn()' (click)="onAnchorClick()" >Ingresar</a>
+                </li>
+                <li class="nav-item">
+                    <a class=" " routerLink='/edit' *ngIf='isLoggedIn()' >Administracion</a>
+                  </li>
+                <li class="nav-item" *ngIf='isLoggedIn()' >
+                    <a class=" " (click)='logout()' >Salir</a>
+                  </li>
+              <hr>
+              
+              
+            </ul>
+
+            <div class="social-network" >
+                <a class="social-nav" routerLink='/'>
+                    <i class="socicon-facebook" ></i>
+                  
+                  </a>
+                  <a class="social-nav" routerLink='/'>
+                
+                    <i class="socicon-whatsapp" ></i>
+                  
+                  </a>
+                  <a class="social-nav" routerLink='/'>
+                  
+                    <i class="socicon-instagram" ></i>
+                  </a>
+              </div>
+
+            <div class="underbar"></div>
+          </div>
+        </nav>
+  </section>
+  
+  <section class="contain-image">
+    <img alt="Image" src="/assets/img/chalita/portada10.jpg" class="bg-image" />
+    
+    </section>
+ 
+  
+  <section class="space-sm row justify-content-center form-search" >
+      <!-- <div class=""> -->
+          <div class="row">
+              <form class="card card-sm form-left" (ngSubmit)='searchProperty()' >
+                  <div class="card-body row no-gutters align-items-center form-res">
+                      <!-- <div class="col-auto">
+                          <i class="icon-magnifying-glass h4 text-body"></i>
+                      </div> -->
+                      <!--end of col-->
+                      <div class="">
+      
+                          <div class="dropdown">
+                            <button type="button" class="btn btn-success dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                {{ kindOperation }}
+                               
+                            </button>
+                            <div class="dropdown-menu dropdown-menu-right dropdown-menu-sm">
+                                <a *ngFor="let operation of operations" class="dropdown-item" (click)='onSetKindOperation($event.target.innerHTML)' >
+                                  {{ operation.name }}
+                                </a>
+                            </div>
+                        </div>
+      
+                      </div>
+                      <div class="">
+                        <div class="dropdown">
+                          <button type="button" class="btn btn-success dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              {{ kindProperty }}
+                          </button>
+                          <div class="dropdown-menu dropdown-menu-right dropdown-menu-sm">
+                              <a class="dropdown-item" (click)='onSetKindProperty($event.target.innerHTML)' >Chacra</a>
+                              <a class="dropdown-item" (click)='onSetKindProperty($event.target.innerHTML)' >Casa</a>
+                              <a class="dropdown-item" (click)='onSetKindProperty($event.target.innerHTML)' >Departamento</a>
+                              <a class="dropdown-item" (click)='onSetKindProperty($event.target.innerHTML)' >Casa de campo</a>
+                              <a class="dropdown-item" (click)='onSetKindProperty($event.target.innerHTML)' >Terreno/Lote</a>
+                              <a class="dropdown-item" (click)='onSetKindProperty($event.target.innerHTML)' >Chacra</a>
+                              <a class="dropdown-item" (click)='onSetKindProperty($event.target.innerHTML)' >Quinta</a>
+                              <a class="dropdown-item" (click)='onSetKindProperty($event.target.innerHTML)' >Campo</a>
+                              <a class="dropdown-item" (click)='onSetKindProperty($event.target.innerHTML)' >Loteo</a>
+                              <a class="dropdown-item" (click)='onSetKindProperty($event.target.innerHTML)' >Galpon</a>
+                              <a class="dropdown-item" (click)='onSetKindProperty($event.target.innerHTML)' >Duplex</a>
+                              
+                          </div>
+                      </div>
+                      </div>
+                      <div class="">
+                        <div class="dropdown">
+                          <button type="button" class="btn btn-success dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              {{ location }}
+                             
+                          </button>
+                          <div class="dropdown-menu dropdown-menu-right dropdown-menu-sm">
+                              <a class="dropdown-item" (click)='onSetLocation($event.target.innerHTML)' >Madariaga</a>
+                              <a class="dropdown-item" (click)='onSetLocation($event.target.innerHTML)' >Pinamar</a>
+                              <a class="dropdown-item" (click)='onSetLocation($event.target.innerHTML)' >Maipu</a>
+                              <a class="dropdown-item" (click)='onSetLocation($event.target.innerHTML)' >Costa Esmeralda</a>
+                              <a class="dropdown-item" (click)='onSetLocation($event.target.innerHTML)' >Ostende</a>
+                              
+                          </div>
+                      </div>
+                      </div>
+                      
+                      <!--end of -->
+                      <div class="btn-custom">
+                          <button class="btn btn-lg " type="submit" ><i class="icon-magnifying-glass h4 text-body"></i></button>
+                      </div>
+                      <!--end of -->
+                  </div>
+              </form>
+              
+                    <form class="card card-sm search" (ngSubmit)='searchPropertyForm()' >
+                        <div class="card-body row no-gutters align-items-center">
+          
+                            <!-- <div class="col-auto">
+                                <i class="icon-magnifying-glass h4 text-body"></i>
+                            </div> -->
+                            <!--end of col-->
+                            
+                            <div class="">
+                              <div class="">
+                                <input type="text" placeholder="Busqueda por Codigo">
+                            </div>
+                            </div>
+                            <!--end of col-->
+                            <div class="col-auto btn-custom">
+                                <button class="btn btn-lg" type="submit" ><i class="icon-magnifying-glass h4 text-body"></i></button>
+                            </div>
+                            <!--end of col-->
+                        </div>
+                    </form>
+                
+          </div>
+          <!--end of col-->  
+      
+  </section>
+
+ <section class="sect-top-abs">
+    <div class="top-abs"> 
+      <p>
+          Agradecemos su visita. Nos interesa su opinión y sugerencias para mejorar nuestro servicio
+      </p>
+    </div>
+ </section>
+
+
+
+
+
+  
+</div>
+  
+
+
+
+

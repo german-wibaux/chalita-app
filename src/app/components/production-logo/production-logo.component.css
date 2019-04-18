@@ -1,3 +1,25 @@
-img {
-    width: 100%;
+.container-fluid {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    position: absolute;
 }
+
+.container-fluid > div {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-fluid > div > h2 {
+    padding-right: 0.5rem;
+}
+
+.container-fluid > div > img {
+    width: 70%;
+    height: auto;    
+}
+

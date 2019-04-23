@@ -34,5 +34,12 @@
 .div-cv {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: flex-start;
+    padding: 0.9rem;
+    font-size: 13px;
+    align-items: flex-end;
+}
+
+.div-cv > img {
+    margin-left: 2rem;
 }

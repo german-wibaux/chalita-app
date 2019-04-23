@@ -33,7 +33,6 @@ import { MessageService } from './services/message.service';
 import { ModalTasacionesComponent } from './components/modal-tasaciones/modal-tasaciones.component';
 import { UpdatePropertyComponent } from './components/update-property/update-property.component';
 import { DeletedComponent } from './components/deleted/deleted.component';
-import { ProductionLogoComponent } from './components/production-logo/production-logo.component';
 
 @NgModule({
   declarations: [
@@ -53,8 +52,7 @@ import { ProductionLogoComponent } from './components/production-logo/production
     ResultSearchComponent,
     ModalTasacionesComponent,
     UpdatePropertyComponent,
-    DeletedComponent,
-    ProductionLogoComponent
+    DeletedComponent
   ],
   imports: [
     BrowserModule,

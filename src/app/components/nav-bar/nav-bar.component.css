@@ -133,6 +133,12 @@
     .social-nav {
       display: flex;
       align-items: center;
+      color: #11692f;
+    }
+
+    .social-nav:hover {
+      color: #11692f;
+      text-decoration: none;
     }
 
     .search {

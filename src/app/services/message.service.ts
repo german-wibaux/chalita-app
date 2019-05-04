@@ -8,9 +8,16 @@ export class MessageService {
 
   constructor(private _http: HttpClient) {}
 
-  sendMessage(body: any) {
-    console.log(body);
-    return this._http.post('http://localhost:3000/form', body);    
+  sendMessage(query) {
+
+    let base = 'https://us-central1-node-app-372ef.cloudfunctions.net/sendMail?';
+    let url = base + 'email=' + query.email + '&mensaje=' + query.mensaje + '&asunto=' + query.asunto;
+
+    let _body = 'email=germanwibaux@gmail.com&mensaje=hola queria consulasknda akjsbdnaius bnialsu nbolauis dnbpuiasnd bpaiosud &asunto=presupuestar mi casa';
+    
+    return this._http.post(url , _body,{responseType: 'text'}).subscribe( result => {
+        console.log(result);
+      } ); 
   }
 
 }

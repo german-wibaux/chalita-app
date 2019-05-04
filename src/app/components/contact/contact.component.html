@@ -1,54 +1,46 @@
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Mandanos tu consulta</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form class="text-left col-lg-12" name="userform" (ngSubmit)="contactForm(form.form.value)" #form="ngForm">
 
-  
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Mandanos tu consulta</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-            <form class="text-left col-lg-12" name="userform" (ngSubmit)="contactForm(form.form.value)" #form="ngForm" >
-                <div class="form-group">
-                    <label for="login-email">Titulo </label>
-                    <input class="form-control form-control-lg" type="text" name="nombre" placeholder="Titulo consulta" ngModel>
-                </div>
-                <div class="form-group">
-                    <label for="login-password">Consulta</label>
-                    <textarea class="form-control form-control-lg" name="" id="" cols="30" rows="10" name="mensaje" placeholder="Consulta..." ngModel></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="login-email">Telefono </label>
-                    <input class="form-control form-control-lg" type="email" name="asunto" placeholder="Telefono"  ngModel>
-                </div>
-                <div class="form-group">
-                    <label for="login-email">Email </label>
-                    <input class="form-control form-control-lg" type="email" name="email" placeholder="Email" ngModel>
-                </div>
+          <div class="form-group">
+            <label for="login-email">Titulo </label>
+            <input class="form-control form-control-lg" type="text" name="nombre" placeholder="Titulo consulta" ngModel>
+          </div>
 
+          <div class="form-group">
+            <label for="login-email">Telefono </label>
+            <input class="form-control form-control-lg" type="email" name="asunto" placeholder="Telefono" ngModel>
+          </div>
 
-                <div>
-                    
-                </div>
-                <div class="text-center mt-3">
-                    <!-- <button type="submit" class="btn btn-lg btn-primary">Log in user site</button> -->
-                    <button type="submit" class="btn btn-lg btn-primary" style="margin-bottom: 20px" >
-                          Enviar consulta
-                    </button>
-                </div>
-                
-            </form>
-            <!-- <div class="text-center mt-3">
-              <button class="btn btn-lg btn-primary" (click)='onClickGoogleLogin()' >Log in google</button>
-            </div> -->
-        </div>
-        <!-- <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div> -->
+          <div class="form-group">
+            <label for="login-email">Email </label>
+            <input class="form-control form-control-lg" type="email" name="email" placeholder="Email" ngModel>
+          </div>
+
+          <div class="form-group">
+            <label for="login-password">Consulta</label>
+            <textarea class="form-control form-control-lg" name="" id="" cols="30" rows="10" name="mensaje"
+              placeholder="Consulta..." ngModel></textarea>
+          </div>
+
+          <div class="text-center mt-3">
+            <!-- <button type="submit" class="btn btn-lg btn-primary">Log in user site</button> -->
+            <button type="submit" class="btn btn-lg btn-primary" style="margin-bottom: 20px">
+              Enviar consulta
+            </button>
+          </div>
+        </form>
       </div>
     </div>
   </div>
+</div>

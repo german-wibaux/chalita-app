@@ -40,6 +40,10 @@
 }
 
 .div-cv > img {
-    height: 7rem;
+    height: 6rem;
     width: auto;
+}
+
+.list-unstyled > .row {
+    color: #999999;
 }

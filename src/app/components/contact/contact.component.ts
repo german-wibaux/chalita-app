@@ -23,14 +23,14 @@ export class ContactComponent implements OnInit {
   }
 
   contactForm(form) {
-    this._MessageService.sendMessage(form).subscribe(() => {
-      Swal.fire({
-        title: 'Formulario de contacto',
-        text: 'Mensaje enviado correctamente',
-        type: 'success',
-        confirmButtonText: 'Cool'
-      })
-    });
+    // this._MessageService.sendMessage(form).subscribe(() => {
+    //   Swal.fire({
+    //     title: 'Formulario de contacto',
+    //     text: 'Mensaje enviado correctamente',
+    //     type: 'success',
+    //     confirmButtonText: 'Cool'
+    //   })
+    // });
      
   }
 

@@ -31,6 +31,9 @@ export class ContactComponent implements OnInit {
     //     confirmButtonText: 'Cool'
     //   })
     // });
+    //console.log(form);
+    this._MessageService.sendMessage(form);
+    
      
   }
 

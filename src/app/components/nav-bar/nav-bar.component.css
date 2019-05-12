@@ -12,6 +12,34 @@
   .space-sm > .row > .search {
     width: 62%;
   }
+  
+  .contain-image {
+    display: none;
+  }  
+
+  .navbar-brand {
+    padding: 0;
+  }
+
+  .navbar-brand > img {
+    width: auto !important;
+    height: 5.1rem;
+  }
+
+  .bg-light {
+    padding: 14px 0;
+  }
+
+  .navbar-nav {
+    background-color: #ffffff;
+  }
+
+  .social-network {
+    width: 100% !important;
+    justify-content: flex-start !important;
+    background-color: #ffffff;
+    height: 2rem;
+  }
 
 }
 
@@ -36,6 +64,15 @@
 
   .space-sm > .row > .search > .card-body > .col-auto > button {
     padding: 0.4rem;
+  }
+
+  .contain-image {
+    display: block;
+  }  
+
+  .social-network {
+    width: 10% !important;
+    justify-content: space-between !important;    
   }
 
 }

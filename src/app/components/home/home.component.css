@@ -1,3 +1,9 @@
+@media (min-width: 320px) {
+    .col-lg-3 > div {
+      z-index: 1;
+    }
+}
+
 .container-fluid {
     padding: 0 !important;
 }

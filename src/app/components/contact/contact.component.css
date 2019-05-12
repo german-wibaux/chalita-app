@@ -1,0 +1,16 @@
+.form-control-lg {
+    padding: .5rem .5rem;
+    font-size: 0.8rem;
+}
+
+.form-group label {
+    font-size: 1em;
+}
+
+.form-group > input::placeholder {
+    color:  #bfbfbf;
+}
+
+.form-group > textarea::placeholder {
+    color:  #bfbfbf;
+}

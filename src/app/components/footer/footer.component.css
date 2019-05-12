@@ -1,3 +1,9 @@
+@media (min-width: 300px) {
+    .mapa-index > iframe {
+        width: 300px !important;
+    }
+}
+
 .footer-short {
     padding: 1rem !important;
     background-color: rgb(31, 26, 23) !important;

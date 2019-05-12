@@ -14,7 +14,7 @@ export class ModalTasacionesComponent implements OnInit {
   }
 
   tasaForm(form) {
-    this._message.sendMessage(form);
+    this._message.sendMessageTas(form);    
   }
 
 }

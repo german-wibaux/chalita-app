@@ -13,6 +13,7 @@ import { map } from 'rxjs/operators';
 })
 export class PropertyService {
   propertyCollection: AngularFirestoreCollection<PropertyInterface> = null;
+  propertyCollection1: AngularFirestoreCollection<PropertyInterface> = null;
   properties: Observable<PropertyInterface[]>;
   property: Observable<PropertyInterface>;
   propertyDoc: AngularFirestoreDocument<PropertyInterface>;
@@ -188,5 +189,40 @@ export class PropertyService {
     return this.afs.collection<PropertyInterface>('properties').snapshotChanges();
   }
 
+  public getPropertiesAlquileres() {
+      this.propertyCollection = this.afs.collection<PropertyInterface>('properties' , ref => ref.where('kindOperation', '==', 'Alquiler temporario'));      
+      this.properties = this.propertyCollection.snapshotChanges().pipe(
+        map(actions => actions.map(a => {
+          const data = a.payload.doc.data() as PropertyInterface;
+          const id = a.payload.doc.id;
+          return { id, ...data };
+        }))
+      );
+      return this.properties;      
+  }
+
+  public getPropertiesAlquileresPer() {
+    this.propertyCollection = this.afs.collection<PropertyInterface>('properties' , ref => ref.where('kindOperation', '==', 'Alquiler permanente'));      
+    this.properties = this.propertyCollection.snapshotChanges().pipe(
+      map(actions => actions.map(a => {
+        const data = a.payload.doc.data() as PropertyInterface;
+        const id = a.payload.doc.id;
+        return { id, ...data };
+      }))
+    );
+    return this.properties;      
+  }
+
+  public getPropertiesVenta() {
+    this.propertyCollection = this.afs.collection<PropertyInterface>('properties' , ref => ref.where('kindOperation', '==', 'Venta'));      
+    this.properties = this.propertyCollection.snapshotChanges().pipe(
+      map(actions => actions.map(a => {
+        const data = a.payload.doc.data() as PropertyInterface;
+        const id = a.payload.doc.id;
+        return { id, ...data };
+      }))
+    );
+    return this.properties;      
+  }
 
 }

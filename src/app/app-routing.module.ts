@@ -15,6 +15,8 @@ import { NewPropertyComponent } from './components/new-property/new-property.com
 import { ResultSearchComponent } from './components/result-search/result-search.component';
 import { UpdatePropertyComponent } from './components/update-property/update-property.component';
 import { DeletedComponent } from './components/deleted/deleted.component';
+import { AlquileresComponent } from './components/alquileres/alquileres.component';
+import { VentasComponent } from './components/ventas/ventas.component';
 
 
 const routes: Routes = [
@@ -22,6 +24,8 @@ const routes: Routes = [
     {path: 'login', component: LoginPageComponent},
     {path: 'private', canActivate:[AuthGuardService], component: EditComponent },
     { path: 'contact', component: ContactComponent },
+    { path: 'alqui', component: AlquileresComponent },
+    { path: 'ventas', component: VentasComponent },
     { path: 'new-property', canActivate:[AuthGuardService] , component: NewPropertyComponent },
     { path: 'about', component: AboutComponent },
     { path: 'result/:operation/:property/:location', component: ResultSearchComponent },

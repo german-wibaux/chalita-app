@@ -15,10 +15,10 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="" >Alquileres</a>
+                <a class="" routerLink="/alqui">Alquileres</a>
               </li>
               <li class="nav-item">
-                <a class=" " >Ventas</a>
+                <a class=" " routerLink="/ventas">Ventas</a>
               </li>
               <li class="nav-item">
                 <a class=" " >Turismo</a>
@@ -55,7 +55,7 @@
                     <i class="socicon-facebook" ></i>
                   
                   </a>
-                  <a class="social-nav" routerLink='/'>
+                  <a href="https://wa.me/5492267631530" target="_blank" class="social-nav" >
                 
                     <i class="socicon-whatsapp" ></i>
                   
@@ -89,7 +89,7 @@
                       <div class="">
       
                           <div class="dropdown">
-                            <button type="button" class="btn btn-success dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <button type="button" class="btn btn-success dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" (focus)="bigSearch()" >
                                 {{ kindOperation }}
                                
                             </button>
@@ -103,7 +103,7 @@
                       </div>
                       <div class="">
                         <div class="dropdown">
-                          <button type="button" class="btn btn-success dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <button type="button" class="btn btn-success dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" (focus)="bigSearch()" >
                               {{ kindProperty }}
                           </button>
                           <div class="dropdown-menu dropdown-menu-right dropdown-menu-sm">
@@ -124,7 +124,7 @@
                       </div>
                       <div class="">
                         <div class="dropdown">
-                          <button type="button" class="btn btn-success dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <button type="button" class="btn btn-success dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" (focus)="bigSearch()" >
                               {{ location }}
                              
                           </button>
@@ -140,14 +140,17 @@
                       </div>
                       
                       <!--end of -->
-                      <div class="btn-custom">
-                          <button class="btn btn-lg " type="submit" ><i class="icon-magnifying-glass h4 text-body"></i></button>
+                      <div class="" > 
+                        <div class="btn-custom">
+                          <button class="btn btn-lg " type="submit" ><i [style.font-size.rem]="search" class="icon-magnifying-glass h4 text-body"></i></button>
+                        </div>
                       </div>
+                      
                       <!--end of -->
                   </div>
               </form>
               
-                    <form class="card card-sm search" (ngSubmit)='searchPropertyForm()' >
+                    <form class="card card-sm search" >
                         <div class="card-body row no-gutters align-items-center">
           
                             <!-- <div class="col-auto">
@@ -157,12 +160,13 @@
                             
                             <div class="">
                               <div class="">
-                                <input type="text" placeholder="Busqueda por Codigo">
+                                <!-- <input type="text" placeholder="Busqueda por Codigo"> -->
+                                <ng2-completer [(ngModel)]="searchStr" name="codesearch" [datasource]="codes" [minSearchLength]="0" [fieldTabindex]="5" placeholder="Búsqueda por codigo" (focus)="bigSearch1()" ></ng2-completer>
                             </div>
                             </div>
                             <!--end of col-->
                             <div class="col-auto btn-custom">
-                                <button class="btn btn-lg" type="submit" ><i class="icon-magnifying-glass h4 text-body"></i></button>
+                                <button class="btn btn-lg" type="submit" (click)="searchCode()" ><i [style.font-size.rem]="search1" class="icon-magnifying-glass h4 text-body"></i></button>
                             </div>
                             <!--end of col-->
                         </div>

@@ -34,6 +34,10 @@ import { ModalTasacionesComponent } from './components/modal-tasaciones/modal-ta
 import { UpdatePropertyComponent } from './components/update-property/update-property.component';
 import { DeletedComponent } from './components/deleted/deleted.component';
 
+import { Ng2CompleterModule } from "ng2-completer";
+import { AlquileresComponent } from './components/alquileres/alquileres.component';
+import { VentasComponent } from './components/ventas/ventas.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,7 +56,9 @@ import { DeletedComponent } from './components/deleted/deleted.component';
     ResultSearchComponent,
     ModalTasacionesComponent,
     UpdatePropertyComponent,
-    DeletedComponent
+    DeletedComponent,
+    AlquileresComponent,
+    VentasComponent
   ],
   imports: [
     BrowserModule,
@@ -64,7 +70,8 @@ import { DeletedComponent } from './components/deleted/deleted.component';
     FormsModule,
     AngularFireStorageModule,
     CarouselModule.forRoot(),
-    HttpClientModule  
+    HttpClientModule,
+    Ng2CompleterModule 
     
   ],
   providers: [AuthService, PropertyService, OperationService, MessageService],

@@ -253,3 +253,15 @@
       background-color: #6c757d !important;
     border-color: #6c757d !important;
     }
+
+    /* .card-body > div > div > button:hover > i {
+      font-size: 1.7rem !important;
+    } */
+
+    .card {
+      border: 2px solid rgba(0,0,0,.125) !important;
+    }
+
+    .dropdown-item {
+      width: 82% !important;
+    }

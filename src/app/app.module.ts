@@ -34,6 +34,7 @@ import { ModalTasacionesComponent } from './components/modal-tasaciones/modal-ta
 import { UpdatePropertyComponent } from './components/update-property/update-property.component';
 import { DeletedComponent } from './components/deleted/deleted.component';
 
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { Ng2CompleterModule } from "ng2-completer";
 import { AlquileresComponent } from './components/alquileres/alquileres.component';
 import { VentasComponent } from './components/ventas/ventas.component';
@@ -74,7 +75,11 @@ import { VentasComponent } from './components/ventas/ventas.component';
     Ng2CompleterModule 
     
   ],
-  providers: [AuthService, PropertyService, OperationService, MessageService],
+  providers: [AuthService, 
+              PropertyService, 
+              OperationService, 
+              MessageService,
+              {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -60,7 +60,6 @@ export class UpdatePropertyComponent implements OnInit {
     this.route.params.subscribe( result => {
       this.propertyService.getProperty(result['id']).subscribe( resultProp => {
        this.property = resultProp;
-       console.log(this.property.images);
       //  this.images = this.property.imagen;
       //  for (let i = 0; i < this.images.length; i++) {
       //    this.slides.push({

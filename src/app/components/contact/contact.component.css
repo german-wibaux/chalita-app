@@ -14,3 +14,7 @@
 .form-group > textarea::placeholder {
     color:  #bfbfbf;
 }
+
+.modal-header {
+    flex-direction: column;
+}

@@ -22,7 +22,7 @@ export class PropertyService {
 
 
   getProperties() {
-    this.propertyCollection = this.afs.collection<PropertyInterface>('properties',ref => ref.orderBy('id', 'desc'));
+    this.propertyCollection = this.afs.collection<PropertyInterface>('properties',ref => ref.orderBy('id', 'asc'));
     this.properties = this.propertyCollection.snapshotChanges().pipe(
       map(actions => actions.map(a => {
         const data = a.payload.doc.data() as PropertyInterface;

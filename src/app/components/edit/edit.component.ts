@@ -25,11 +25,10 @@ export class EditComponent implements OnInit, OnDestroy {
     this.propertiesService.getProperties().subscribe( properties => {
       /** List every properties */
       properties.forEach(element => {
-        if (element.available) {
+        if (element.available) {          
           this.properties.push(element);
         }
       });
-      // this.properties = properties;
     });
   }
     

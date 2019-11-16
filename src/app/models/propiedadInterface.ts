@@ -1,6 +1,7 @@
 export interface PropertyInterface {
     id?: string;
     available?:boolean;
+    created?: number,
     bathroom?: string;
     code?: string;
     description?: string;

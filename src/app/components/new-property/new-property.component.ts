@@ -9,6 +9,7 @@ import { PropertyInterface } from 'src/app/models/propiedadInterface';
 import { PropertyService } from 'src/app/services/property.service';
 import { UrlsPhotoService } from 'src/app/services/urls-photo.service';
 import { UrldeletedInterface } from 'src/app/models/urldeletedInterface';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-new-property',
@@ -71,13 +72,16 @@ export class NewPropertyComponent implements OnInit {
   constructor(private propertyService: PropertyService, 
               private storage: AngularFireStorage,
               private router: Router,
-              private urlphotoService: UrlsPhotoService) { }
+              private urlphotoService: UrlsPhotoService,
+              private datePipe: DatePipe) { }
 
   ngOnInit() {
   }
 
   onSaveProperty() {
     this.property.available = true;
+    let created = Date.now();
+    this.property.created = created;
     this.propertyService.addProperty(this.property).then( response => {
       if (response) {
         alert("La propiedad ha sido ingresada con exito");

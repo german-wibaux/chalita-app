@@ -39,6 +39,8 @@ import { Ng2CompleterModule } from "ng2-completer";
 import { AlquileresComponent } from './components/alquileres/alquileres.component';
 import { VentasComponent } from './components/ventas/ventas.component';
 
+import {DatePipe} from '@angular/common';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -79,7 +81,8 @@ import { VentasComponent } from './components/ventas/ventas.component';
               PropertyService, 
               OperationService, 
               MessageService,
-              {provide: LocationStrategy, useClass: HashLocationStrategy}],
+              {provide: LocationStrategy, useClass: HashLocationStrategy},
+              DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

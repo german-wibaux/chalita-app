@@ -1,15 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { Router } from '@angular/router';
 import { ElementSchemaRegistry } from '@angular/compiler';
 import { MessageService } from 'src/app/services/message.service';
 import Swal from 'sweetalert2';
+
+  let $: any;
+
+  declare var jQuery:any;
 
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.css']
 })
+
+  
+
 export class ContactComponent implements OnInit {
+
+  
+  
+  @ViewChild('modal') modal:ElementRef;
 
   constructor(private router: Router,
     public _MessageService: MessageService) { }
@@ -33,7 +44,9 @@ export class ContactComponent implements OnInit {
     // });
     //console.log(form);
     this._MessageService.sendMessage(form);
-    
+    alert('El mensaje ha sido enviado');
+    jQuery(this.modal.nativeElement).modal('hide');
+    this.router.navigate(['/']);
      
   }
 

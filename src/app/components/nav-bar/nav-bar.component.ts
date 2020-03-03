@@ -46,8 +46,11 @@ export class NavBarComponent implements OnInit {
       this.propertiesService.getProperties().subscribe( properties => {
         /** List every properties */
         properties.forEach(element => {
-          this.codes.push(element.code);
-          this.properties_id.push({id: element.id, code: element.code});
+          if (element.available) {
+            this.codes.push(element.code);
+            this.properties_id.push({id: element.id, code: element.code});
+          }
+          
         });
         // this.properties.push(properties.)
         

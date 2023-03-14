@@ -1,0 +1,136 @@
+.logo-chalita {
+    width: auto !important;
+    height: 8rem;
+}
+
+.nav-link:hover {
+    color: #56a477 !important;
+    cursor: pointer;
+}
+
+.navbar-nav {
+    margin-left: 0 !important;
+}
+
+.header {
+    background-color: #56a477;
+    padding-bottom: 8rem;
+    overflow: visible;
+}
+
+.no-gutters>div {
+    width: unset;
+}
+
+.no-gutters {
+    display: flex;
+    justify-content: space-around;
+    padding: 0.75rem 1.5rem;
+}
+
+.no-gutters button:focus {
+    box-shadow: unset !important;
+}
+
+.code-search {
+    height: 70.8px;
+}
+
+.top-abs {
+    background-color: rgb(88, 89, 91);
+    width: 100%;
+    color: white;
+    text-align: center;
+}
+
+.top-abs>p {
+    color: white;
+}
+
+.sect-top-abs {
+    padding: 0 5rem;
+    background-color: rgb(88, 89, 91);
+}
+
+.footer .fa-stack .fa-stack-1x {
+    color: #56a477;
+}
+
+.footer .fa-stack:hover .fa-stack-1x {
+    color: #ffffff;
+}
+
+.footer .fa-stack:hover .fa-stack-2x {
+    color: #56a477;
+}
+
+.links-container>.row>div>ul>li>a {
+    cursor: pointer;
+    color: black;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.links-container>.row>div>ul>li>a:hover {
+    text-decoration: underline;
+}
+
+.links-container>.row>div>ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.links-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 2rem;
+}
+
+.map-foo>h2 {
+    color: black;
+    text-align: left;
+}
+
+.mapa-index {
+    display: flex;
+}
+
+.social-container {
+    padding-top: 4rem;
+}
+
+@media screen and (max-width:400px) {
+    .searchbar {
+        flex-direction: column;
+    }
+
+    .searchbar button {
+        margin: 1rem 0;
+    }
+
+    .form-left {
+        margin-top: 5rem;
+    }
+
+    .links-container {
+        justify-content: center;
+        margin-top: 3rem;
+    }
+
+}
+
+@media screen and (min-width:400px) and (max-width: 1200px) {
+    .header {
+        padding-bottom: 3rem;
+    }
+
+    .form-left {
+        margin-top: 5rem;
+    }
+
+    .links-container {
+        justify-content: center;
+        margin-top: 3rem;
+    }
+}

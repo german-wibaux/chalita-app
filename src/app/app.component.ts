@@ -57,6 +57,7 @@ export class AppComponent {
   }
 
   searchProperty() {
+    debugger;
     this.router.navigate(['/result', this.kindOperation, this.kindProperty, this.location]);
     this.resetParameters();
     this.search = '1.5';

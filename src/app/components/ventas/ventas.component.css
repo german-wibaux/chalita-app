@@ -1,0 +1,135 @@
+@media (min-width: 320px) {
+    .col-lg-3 > div {
+      z-index: 1;
+    }
+}
+
+.container-fluid {
+    padding: 0 !important;
+}
+
+.ventas {
+    background-color: #ff9900 !important;
+    width: 100% !important;
+    padding-top: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.alquileres {
+    background-color: #ffad33 !important;
+    width: 100% !important;
+    /* padding-top: 6rem; */
+}
+
+.card-footer {
+    display: flex !important;
+    /* right: 0; */
+    justify-content: flex-end !important;
+}
+
+.tag {
+    background-color: rgb(31, 26, 23);
+    float: left;
+    width: 200px;
+    height: auto;
+    font-family: 'Museo500-Regular', sans-serif;
+    font-size: 16px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    border-bottom-right-radius: 10px;
+    display: block;
+    /* margin-top: -50px; */
+    color: white;
+    text-align: center;
+}
+
+.biography {
+    display: block;
+    display: -webkit-box;
+    height: 84px;
+    font-size: 1rem;
+    line-height: 1.4;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .flush-with-above {
+    background-color: rgba(102, 255, 102, 0.1);
+    padding-top: 0;
+  }
+
+  .flush-with-above > .container > ul {
+      padding-top: 3rem;
+  }
+
+  .tasaciones > .col-lg-3 > div {
+    max-width: 379.75px !important;
+    top: 4.5rem !important;
+  }
+
+  .tasaciones > .col-lg-3 {
+    padding-right: 2.8rem;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .d-flex > img {
+    height: 3rem;
+    width: 4rem;
+  }
+
+  .card-body {
+      padding: 1rem;
+  }
+
+  .container-principal {
+    display: flex;
+    flex-direction: column;
+    width: 64%;
+    align-items: flex-start;
+  }
+
+  .bg-secondary {
+    width: 8rem;
+  }
+
+  .container-principal > .col-lg-3 > .position-fixed {
+    top: 6rem !important;
+  }
+
+  .container-principal > .col-lg-3 {
+    padding-left: 0;
+  }
+
+  .card > .card-body > .d-flex {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .container-principal > .col-lg-3 > div > .card > a {
+    cursor: pointer;
+    height: 7rem;
+  }
+
+  .custom-card {
+    height: 700px;
+  }
+
+  .custom-inside-card {
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .main-container {
+    background-color: rgba(102, 255, 102, 0.1);
+    padding-top: 5rem;
+  }
+
+  .feature-list {
+    padding-top: 3rem;
+  }

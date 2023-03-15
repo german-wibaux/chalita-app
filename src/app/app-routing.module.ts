@@ -1,15 +1,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './components/about/about.component';
+import { AlquileresComponent } from './components/alquileres/alquileres.component';
+import { HomeComponent } from './components/home/home.component';
+import { ResultSearchComponent } from './components/result-search/result-search.component';
+import { VentasComponent } from './components/ventas/ventas.component';
 
 const routes: Routes = [
-  // { path: '', component: HomeComponent },
+  { path: '', component: HomeComponent },
   // { path: 'login', component: LoginPageComponent },
   { path: 'about', component: AboutComponent },
   // { path: 'details/:id', component: PropertyComponent },
-  // { path: 'alqui', component: AlquileresComponent },
-  // { path: 'ventas', component: VentasComponent },
-  // { path: 'result/:operation/:property/:location', component: ResultSearchComponent },
+  { path: 'alqui', component: AlquileresComponent },
+  { path: 'ventas', component: VentasComponent },
+  { path: 'result/:operation/:property/:location', component: ResultSearchComponent }
   // { path: 'private', canActivate:[AuthGuardService], component: EditComponent },
   // { path: 'new-property', canActivate:[AuthGuardService] , component: NewPropertyComponent },
   // { path: 'new-location', canActivate:[AuthGuardService] , component: NewLocationComponent },

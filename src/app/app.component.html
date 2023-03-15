@@ -63,7 +63,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-6 col-xl-7">
-                <form class="card form-left" (ngSubmit)="searchProperty()">
+                <form class="card form-left" >
                     <div class="row no-gutters align-items-center form-res searchbar">
                         
                         <div class="">
@@ -117,10 +117,9 @@
 
                         <div class="">
                             <div class="btn-custom">
-                                <button class="btn btn-lg " type="submit">
+                                <button class="btn btn-lg"  (click)="searchProperty()">
 
-                                        <fa-icon [style.font-size.rem]="search" [icon]="faSearch"></fa-icon>
-                                
+                                        <fa-icon [style.font-size.rem]="search" [icon]="faSearch"></fa-icon>                               
                                 
                                 </button>
                             </div>

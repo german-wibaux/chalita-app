@@ -15,6 +15,11 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AboutComponent } from './components/about/about.component';
 import { ParallaxCompComponent } from './components/parallax-comp/parallax-comp.component';
 import { WhatsappIconComponent } from './components/whatsapp-icon/whatsapp-icon.component';
+import { HomeComponent } from './components/home/home.component';
+import { WaitingComponent } from './components/waiting/waiting.component';
+import { VentasComponent } from './components/ventas/ventas.component';
+import { AlquileresComponent } from './components/alquileres/alquileres.component';
+import { ResultSearchComponent } from './components/result-search/result-search.component';
 
 
 @NgModule({
@@ -22,7 +27,12 @@ import { WhatsappIconComponent } from './components/whatsapp-icon/whatsapp-icon.
     AppComponent,
     AboutComponent,
     ParallaxCompComponent,
-    WhatsappIconComponent
+    WhatsappIconComponent,
+    HomeComponent,
+    WaitingComponent,
+    VentasComponent,
+    AlquileresComponent,
+    ResultSearchComponent
   ],
   imports: [
     BrowserModule,

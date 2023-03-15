@@ -1,0 +1,50 @@
+.tag {
+    background-color: rgb(31, 26, 23);
+    float: left;
+    width: 200px;
+    height: auto;
+    font-family: 'Museo500-Regular', sans-serif;
+    font-size: 16px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    border-bottom-right-radius: 10px;
+    display: block;
+    /* margin-top: -50px; */
+    color: white;
+    text-align: center;
+}
+
+.space-sm {
+    padding-top: 0;    
+    background-color: white;
+}
+
+.text-about {
+    padding-top: 4rem;
+}
+
+.text-about > p {
+    padding-left: 2rem;
+}
+
+.container-fluid {
+    padding: 0 5rem;
+}
+
+.div-cv {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.9rem;
+    font-size: 13px;
+    width: 95%;
+}
+
+.div-cv > img {
+    height: 6rem;
+    width: auto;
+}
+
+.list-unstyled > .row {
+    color: #999999;
+}

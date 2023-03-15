@@ -430,7 +430,7 @@ a:hover {
 .header {
 	padding-top: 8rem;
 	padding-bottom: 4em;
-	background: url('../images/header-background.jpg') center center no-repeat;
+	/* background: url('../images/header-background.jpg') center center no-repeat; */
 	background-size: cover;
 	text-align: center;
 }
@@ -549,7 +549,7 @@ a:hover {
 .basic-2 {
 	padding-top: 4.5rem;
 	padding-bottom: 9.5rem;
-	background: url('../images/details-2-background.jpg') center center no-repeat;
+	/* background: url('../images/details-2-background.jpg') center center no-repeat; */
 	background-size: cover;
 }
 

@@ -65,61 +65,64 @@
             <div class="col-lg-6 col-xl-7">
                 <form class="card form-left" (ngSubmit)="searchProperty()">
                     <div class="row no-gutters align-items-center form-res searchbar">
-                        <div class="">
-
-                            <div>
-                                <button type="button" class="btn btn-success dropdown-toggle dropdown-toggle-split"
-                                    data-toggle="dropdown" aria-haspopup="false" aria-expanded="false">
-                                    <!-- Feature 9 get kindOperation -->
-                                    <!-- {{ kindOperation }} -->
-                                </button>
-
-                                <div class="dropdown-menu ">
-                                    <!--  Feature 8 fix onSetKindOperation -->
-                                    <!-- <a *ngFor="let operation of operations" class="dropdown-item"
-                                        (click)='onSetKindOperation($event.target)'>
-                                        {{ operation.name }}
-                                    </a> -->
-                                </div>
-                            </div>
-
-                        </div>
-
-                            <div class="dropdown">
-                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
-                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                    Dropdown button
-                                </button>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                    <li><a class="dropdown-item" href="#">Action</a></li>
-                                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
-                                </ul>
-                            </div>
                         
                         <div class="">
-                            <div>
-                                <button type="button" class="btn btn-success dropdown-toggle dropdown-toggle-split"
-                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <!-- Feature 5 get location  -->
-                                    <!-- {{ location }} -->
-                                    Location
-
+                            <div class="">
+                                <button type="button" class="btn btn-success dropdown-toggle dropdown-toggle-split" id="dropdownMenuButton2"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                {{ kindOperation }}
                                 </button>
-                                <div class="dropdown-menu ">
-                                    <!-- Feature 4 check tag a -->
-                                    <!-- <a class="dropdown-item" (click)='onSetLocation($event.target)'
-                                        *ngFor="let location of locations"> {{ location.name }} </a> -->
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                    <li *ngFor="let operation of operations" ><a class="dropdown-item" (click)='onSetKindOperation($event.target)'>{{ operation.name }}</a></li>
+                                </ul>
+                            </div>
+                        </div>
 
-                                </div>
+                        <div class="">
+
+                            <div class="">
+                                <button type="button" class="btn btn-success dropdown-toggle dropdown-toggle-split" id="dropdownMenuButton1"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                {{ kindProperty }}
+                                </button>
+
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                    
+                                    <li><a class="dropdown-item" (click)='onSetKindProperty($event.target)'>Campo</a></li>
+                                    <li><a class="dropdown-item" (click)='onSetKindProperty($event.target)'>Casa</a></li>
+                                    <li><a class="dropdown-item" (click)='onSetKindProperty($event.target)'>Casa de Campo</a></li>
+                                    <li><a class="dropdown-item" (click)='onSetKindProperty($event.target)'>Chacra</a></li>
+                                    <li><a class="dropdown-item" (click)='onSetKindProperty($event.target)'>Departamento</a></li>
+                                    <li><a class="dropdown-item" (click)='onSetKindProperty($event.target)'>Duplex</a></li>
+                                    <li><a class="dropdown-item" (click)='onSetKindProperty($event.target)'>Galpón</a></li>
+                                    <li><a class="dropdown-item" (click)='onSetKindProperty($event.target)'>Local</a></li>
+                                    <li><a class="dropdown-item" (click)='onSetKindProperty($event.target)'>Loteo</a></li>
+                                    <li><a class="dropdown-item" (click)='onSetKindProperty($event.target)'>Terreno</a></li>
+                                    <li><a class="dropdown-item" (click)='onSetKindProperty($event.target)'>Quinta</a></li> 
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="">
+                            <div>
+                                <button type="button" class="btn btn-success dropdown-toggle dropdown-toggle-split" id="dropdownMenuButton2"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                {{ location }}
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                    <li *ngFor="let location of locations" ><a class="dropdown-item" (click)='onSetLocation($event.target)'>{{ location.name }}</a></li>
+                                </ul>
+
                             </div>
                         </div>
 
                         <div class="">
                             <div class="btn-custom">
-                                <!-- Feature 3 ver q onda este button -->
-                                <!-- <button class="btn btn-lg " type="submit"><i [style.font-size.rem]="search"
-                                        class="icon-magnifying-glass h4 text-body"></i></button> -->
+                                <button class="btn btn-lg " type="submit">
+
+                                        <fa-icon [style.font-size.rem]="search" [icon]="faSearch"></fa-icon>
+                                
+                                
+                                </button>
                             </div>
                         </div>
 
@@ -154,10 +157,9 @@
 </section>
 
 <router-outlet id="acces"></router-outlet>
-<!-- Feature 1 add components -->
-<!-- <app-about id="about"></app-about>
+<app-about id="about"></app-about>
 <app-parallax-comp></app-parallax-comp>
-<app-whatsapp-icon></app-whatsapp-icon> -->
+<app-whatsapp-icon></app-whatsapp-icon>
 
 <div class="footer bg-gray">
     <img class="decoration-circles" src="assets/img/decoration-circles.png" alt="alternative" />

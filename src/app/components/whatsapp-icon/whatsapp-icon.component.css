@@ -1,0 +1,17 @@
+.wp-container {
+    position: fixed;
+    height: 32%;
+    width: 9%;
+    top: 500px;
+    right: 0;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    padding-right: 4rem;
+    z-index: 5;
+}
+
+.wp-container > a > img {
+    width: auto;
+    height: 7rem;
+}

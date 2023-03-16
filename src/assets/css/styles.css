@@ -260,7 +260,7 @@ a:hover {
 	background-color: #ffffff;
 	font-size: 0.875rem;
 	line-height: 1.5rem;
-	-webkit-appearance: none; /* removes inner shadow on form inputs on ios safari */
+	/* -webkit-appearance: none; removes inner shadow on form inputs on ios safari */
 }
 
 .form-control-textarea {

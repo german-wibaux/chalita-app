@@ -45,3 +45,5 @@ Thumbs.db
 .firebase
 .angular
 
+/src/environments/
+

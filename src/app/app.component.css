@@ -1,3 +1,5 @@
+
+
 .logo-chalita {
     width: auto !important;
     height: 8rem;
@@ -45,6 +47,8 @@
 
 .top-abs>p {
     color: white;
+    margin-bottom: 0;
+    padding: 0.5rem 0;
 }
 
 .sect-top-abs {

@@ -20,6 +20,8 @@ import { WaitingComponent } from './components/waiting/waiting.component';
 import { VentasComponent } from './components/ventas/ventas.component';
 import { AlquileresComponent } from './components/alquileres/alquileres.component';
 import { ResultSearchComponent } from './components/result-search/result-search.component';
+import { PropertyComponent } from './components/property/property.component';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
 
 
 @NgModule({
@@ -32,7 +34,8 @@ import { ResultSearchComponent } from './components/result-search/result-search.
     WaitingComponent,
     VentasComponent,
     AlquileresComponent,
-    ResultSearchComponent
+    ResultSearchComponent,
+    PropertyComponent
   ],
   imports: [
     BrowserModule,
@@ -42,7 +45,8 @@ import { ResultSearchComponent } from './components/result-search/result-search.
     AngularFireDatabaseModule,
     AngularFireAuthModule,
     AngularFirestoreModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    CarouselModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -5,6 +5,7 @@ import { OperationInterface } from './models/operationInterface';
 import { LocationService } from './services/location.service';
 import { OperationService } from './services/operation.service';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { PropertyService } from './services/property.service';
 
 @Component({
   selector: 'app-root',
@@ -21,14 +22,35 @@ export class AppComponent {
   locations: LocationInterface[] = [];
   search = '1.5';
   faSearch = faSearch;
+  properties_id: [{id:'', code:''}] =[{id:'', code:''}];
+  codes: string[] = [];
+  searchStr: any | undefined;
 
   constructor(
     private router: Router,
-    route: ActivatedRoute,
+    // private route: ActivatedRoute,
     private operationService: OperationService,
-    private locationService: LocationService
+    private locationService: LocationService,
+    private propertiesService: PropertyService
   ){
     this.operations = [];
+    this.propertiesService.getProperties().subscribe( properties => {
+      /** List every properties */
+      properties.forEach((element:any) => {
+        if (element.available) {
+          // console.log(element)
+          this.codes.push(element.code);
+          this.properties_id.push({id: element.id, code: element.code});
+        }
+        
+      });
+
+      this.locationService.getLocations().subscribe(locations => {
+        
+        this.locations = locations.sort((a, b) => (a.name! < b.name! ? -1 : 1));
+      });
+
+    });
   }
 
   ngOnInit() {
@@ -67,6 +89,16 @@ export class AppComponent {
     this.kindOperation = 'Operación';
     this.kindProperty = 'Propiedad';
     this.location = 'Localidad';
+  }
+
+  searchCode() {
+    //Funcion para buscar elementos en un array
+    let id = this.properties_id.filter(x => x.code == this.searchStr)[0];
+    //let id = this.properties_id.indexOf({id:,code:this.searchStr});
+    let url = 'details/' + id.id;
+    //console.log(url);
+    // this.search1 = '1.5';
+    this.router.navigateByUrl(url);
   }
 
 }

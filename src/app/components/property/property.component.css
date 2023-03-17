@@ -20,9 +20,9 @@
     justify-content: center;   
 }
 
-.carousel{
-    width: 50%;
-} 
+.custom > carousel {
+    width: 100%;
+}
 
 .pricing {    
     right: 0 !important;

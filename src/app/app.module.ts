@@ -22,6 +22,9 @@ import { AlquileresComponent } from './components/alquileres/alquileres.componen
 import { ResultSearchComponent } from './components/result-search/result-search.component';
 import { PropertyComponent } from './components/property/property.component';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { FormsModule } from "@angular/forms";
+import { Ng2CompleterModule } from 'ng2-completer';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -43,10 +46,13 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireStorageModule,
     AngularFireDatabaseModule,
+    Ng2CompleterModule,
     AngularFireAuthModule,
     AngularFirestoreModule,
     FontAwesomeModule,
-    CarouselModule.forRoot()
+    FormsModule,
+    CarouselModule.forRoot(),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

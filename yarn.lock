@@ -4979,6 +4979,11 @@ neo-async@^2.6.2:
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.2.tgz#b4aafb93e3aeb2d8174ca53cf163ab7d7308305f"
   integrity sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==
 
+ng2-completer@^9.0.1:
+  version "9.0.1"
+  resolved "https://registry.yarnpkg.com/ng2-completer/-/ng2-completer-9.0.1.tgz#5ba97fd978bfcef746f5ed71d965f65d280de4de"
+  integrity sha512-zEKehHdCK8E/k4Y0HepprGdYBHr2AOsaq4QpeqoCyUElOOC5M3qi3ZEHV1VF54I7heBQktswwXe5UyWduJ0Xeg==
+
 ngx-bootstrap@^10.2.0:
   version "10.2.0"
   resolved "https://registry.yarnpkg.com/ngx-bootstrap/-/ngx-bootstrap-10.2.0.tgz#5ae8b0a3b3f0bec2f0229556f059be57dd602871"

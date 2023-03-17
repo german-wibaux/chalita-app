@@ -1,12 +1,19 @@
-@media (min-width: 320px) {
+@media screen and (max-width: 1024px) {
   .parallax > .container > h1{
     display: none;
   }
+  .parallax > .container > .resp-title {
+    display: block;
+    font-size: 25px;
+  }
 }
 
-@media (min-width: 1024px) {
+@media screen and (min-width: 1024px) {
   .parallax > .container > h1{
     display: block;
+  }
+  .parallax > .container > .resp-title {
+    display: none;
   }
 }
 

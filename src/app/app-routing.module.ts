@@ -14,18 +14,18 @@ const routes: Routes = [
   { path: 'details/:id', component: PropertyComponent },
   { path: 'alqui', component: AlquileresComponent },
   { path: 'ventas', component: VentasComponent },
-  { path: 'result/:operation/:property/:location', component: ResultSearchComponent }
+  { path: 'result/:operation/:property/:location', component: ResultSearchComponent },
   // { path: 'private', canActivate:[AuthGuardService], component: EditComponent },
   // { path: 'new-property', canActivate:[AuthGuardService] , component: NewPropertyComponent },
   // { path: 'new-location', canActivate:[AuthGuardService] , component: NewLocationComponent },
   // { path: 'update-prop/:id', canActivate:[AuthGuardService], component: UpdatePropertyComponent },
   // { path: 'edit', canActivate:[AuthGuardService], component: EditComponent },
   // { path: 'deleted' , canActivate:[AuthGuardService], component: DeletedComponent },
-  // { path: '**', component: NotFoundComponent }
+  { path: '**', pathMatch: 'full', redirectTo: '' }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

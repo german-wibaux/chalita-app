@@ -33,22 +33,16 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <!-- Feature 12 fix isLoggedIn -->
-                    <!-- <a class="nav-link" routerLink='/login' fragment="acces" *ngIf='!isLoggedIn()'
-                        (click)="onAnchorClick()">Ingresar</a> -->
-                    <a class="nav-link" routerLink='/login' fragment="acces" *ngIf='false'
+                    <a class="nav-link" routerLink='/login' fragment="acces" *ngIf='!isLoggedIn()'
                         (click)="onAnchorClick()">Ingresar</a>
 
                 </li>
                 <li class="nav-item">
-                    <!-- Feature 11 get isLoggedIn -->
-                    <!-- <a class="nav-link" routerLink='/edit' *ngIf='authService.isLoggedIn()'>Administracion</a> -->
-                    <a class="nav-link" routerLink='/edit' *ngIf='false'>Administracion</a>
+                    <a class="nav-link" routerLink='/edit' *ngIf='isLoggedIn()'>Administracion</a>
                 </li>
-                <!--  Feature 10 Fix logout -->
-                <!-- <li class="nav-item" *ngIf='isLoggedIn()'>
+                <li class="nav-item" *ngIf='isLoggedIn()'>
                     <a class="nav-link" (click)='logout()'>Salir</a>
-                </li> -->
+                </li>
                 <li class="nav-item" *ngIf='false'>
                     <a class="nav-link">Salir</a>
                 </li>

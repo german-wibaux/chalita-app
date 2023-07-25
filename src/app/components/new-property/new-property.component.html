@@ -1,0 +1,599 @@
+<div class="col-12 card-body bg-secondary" *ngIf="property != null">
+    <div>
+        <button type="button" class="btn btn-primary" routerLink='/edit'>Volver atras</button>
+    </div>
+    <div class="text-center mb-5">
+        <h1 class="h2 mb-2">Crear una nueva propiedad</h1>
+        <span>No hay campos obligatorios lo que se cargue es lo que se vera en la pagina</span>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-12 col-lg-9">
+            <form (ngSubmit)="onSaveProperty(property)" #formNew="ngForm">
+
+                <div class="form-row form-group">
+                    <div class="col">
+                        <input [(ngModel)]='property.name' [ngModelOptions]="{standalone: true}" #descripcion='ngModel'
+                            class="form-control form-control-lg" type="text" placeholder="Nombre" />
+                    </div>
+                </div>
+                <div class="form-row form-group">
+                    <div class="col">
+                        <input [(ngModel)]='property.description' [ngModelOptions]="{standalone: true}"
+                            #descripcion='ngModel' class="form-control form-control-lg" type="text"
+                            placeholder="Descripcion" />
+                    </div>
+                </div>
+                <div class="form-row form-group">
+                    <div class="col">
+                        <input [(ngModel)]='property.code' [ngModelOptions]="{standalone: true}" #descripcion='ngModel'
+                            class="form-control form-control-lg" type="text" placeholder="Codigo" />
+                    </div>
+                </div>
+                <div class="form-row form-group">
+                    <!-- <div class="col">
+                  <input [(ngModel)]='property.description'  [ngModelOptions]="{standalone: true}" #descripcion='ngModel' class="form-control form-control-lg" type="text"  placeholder="Descripcion" />            
+              </div> -->
+                    <select (change)="onChangeProp($event)" class="custom-select">
+                        <option selected disabled hidden>Tipo de propiedad</option>
+                        <option value="Casa">Casa</option>
+                        <option value="Departamento">Departamento</option>
+                        <option value="Casa de campo">Casa de campo</option>
+                        <option value="Terreno/Lote">Terreno/Lote</option>
+                        <option value="Chacra">Chacra</option>
+                        <option value="Quinta">Quinta</option>
+                        <option value="Campo">Campo</option>
+                        <option value="Loteo">Loteo</option>
+                        <option value="Galpón">Galpón</option>
+                        <option value="Duplex">Duplex</option>
+                        <option value="Duplex">Local</option>
+                    </select>
+                </div>
+                <div class="form-row form-group">
+                    <!-- <div class="col">
+                  <input [(ngModel)]='property.description'  [ngModelOptions]="{standalone: true}" #descripcion='ngModel' class="form-control form-control-lg" type="text"  placeholder="Descripcion" />            
+              </div> -->
+                    <select (change)="onChangeLoca($event)" class="custom-select">
+                        <option selected disabled hidden>Localidad</option>
+                        <option value="{{location.name}}" *ngFor="let location of locations" > {{ location.name }} </option>
+
+                    </select>
+                </div>
+                <div class="form-row form-group">
+                    <div class="col">
+                        <input [(ngModel)]='property.price' [ngModelOptions]="{standalone: true}" #descripcion='ngModel'
+                            class="form-control form-control-lg" type="text" placeholder="Precio" />
+                    </div>
+                </div>
+                <div class="form-row form-group">
+                    <div class="col">
+                        <input [(ngModel)]='property.surfaceCover' [ngModelOptions]="{standalone: true}"
+                            #descripcion='ngModel' class="form-control form-control-lg" type="text"
+                            placeholder="Superficie cubierta" />
+                    </div>
+                </div>
+                <div class="form-row form-group">
+                    <div class="col">
+                        <input [(ngModel)]='property.surfaceTotal' [ngModelOptions]="{standalone: true}"
+                            #descripcion='ngModel' class="form-control form-control-lg" type="text"
+                            placeholder="Superficie lote" />
+                    </div>
+                </div>
+                <div class="form-row form-group">
+                    <!-- <div class="col">
+                  <input [(ngModel)]='property.description'  [ngModelOptions]="{standalone: true}" #descripcion='ngModel' class="form-control form-control-lg" type="text"  placeholder="Descripcion" />            
+              </div> -->
+                    <select (change)="onChangeOper($event)" class="custom-select">
+                        <option selected disabled hidden>Tipo de operación</option>
+                        <option value="Venta">Venta</option>
+                        <option value="Alquiler permanente">Alquiler permanente</option>
+                        <option value="Alquiler temporario">Alquiler temporario</option>
+                    </select>
+                </div>
+                <div class="form-row form-group">
+                    <div class="col">
+                        <input [(ngModel)]='property.rooms' [ngModelOptions]="{standalone: true}" #descripcion='ngModel'
+                            class="form-control form-control-lg" type="text" placeholder="Habitaciones" />
+                    </div>
+                </div>
+                <div class="form-row form-group">
+                    <div class="col">
+                        <input [(ngModel)]='property.bathroom' [ngModelOptions]="{standalone: true}"
+                            #descripcion='ngModel' class="form-control form-control-lg" type="text"
+                            placeholder="Baños" />
+                    </div>
+                </div>
+                <div class="form-row form-group">
+                    <div class="col">
+                        <input [(ngModel)]='property.garage' [ngModelOptions]="{standalone: true}"
+                            #descripcion='ngModel' class="form-control form-control-lg" type="text"
+                            placeholder="Cocheras" />
+                    </div>
+                </div>
+                <div class="form-row form-group">
+                    <div class="col">
+                        <input [(ngModel)]='property.geolocation' [ngModelOptions]="{standalone: true}"
+                            #descripcion='ngModel' class="form-control form-control-lg" type="text"
+                            placeholder="Geolocalización" />
+                    </div>
+                </div>
+                <div class="form-row form-group">
+                    <div class="col">
+                        <input [(ngModel)]='property.state' [ngModelOptions]="{standalone: true}" #descripcion='ngModel'
+                            class="form-control form-control-lg" type="text" placeholder="Estado" />
+                    </div>
+                </div>
+
+
+
+                <div class="row">
+                    <div class="col-sm">
+                        <div class="form-row form-group">
+                            <div class="col">
+                                <p>Imagen 1</p>
+                                <input type="file" (change)="uploadFile($event)" accept=".png,.jpg"
+                                    *ngIf="!property!.images![0] || property!.images![0] == 'borrado'  " />
+                                <div>{{ uploadPercent | async }}</div>
+
+                                <a href='{{ property!.images![0] }}' target="_blank"
+                                    *ngIf="property!.images![0] && property!.images![0] != 'borrado' ">Imagen
+                                    1</a>
+                                <!-- <div class="progress">
+                                      <p><ngb-progressbar type="info" [value]='{{ uploadPercent | async }}'></ngb-progressbar></p>
+                                    </div> -->
+                            </div>
+                            <button type="button" class="btn btn-danger"
+                                *ngIf="property!.images![0] && property!.images![0] != 'borrado'"
+                                (click)="deletePhoto(property!.images![0],0)">Eliminar</button>
+                        </div>
+
+
+                        <div class="form-row form-group">
+                            <div class="col">
+                                <p>Imagen 2</p>
+                                <input type="file" (change)="uploadFile1($event)" accept=".png,.jpg"
+                                    *ngIf="!property!.images![1] || property!.images![1] == 'borrado'  " />
+                                <div>{{ uploadPercent1 | async }}</div>
+                                <a href='{{ property!.images![1] }}' target="_blank"
+                                    *ngIf="property!.images![1] && property!.images![1] != 'borrado' ">Imagen
+                                    2</a>
+                                <!-- <div class="progress">
+                                          <p><ngb-progressbar type="info" [value]='{{ uploadPercent | async }}'></ngb-progressbar></p>
+                                        </div> -->
+                            </div>
+                            <button type="button" class="btn btn-danger"
+                                *ngIf="property!.images![1] && property!.images![1] != 'borrado'"
+                                (click)="deletePhoto(property!.images![1],1)">Eliminar</button>
+                        </div>
+
+                        <div class="form-row form-group">
+                            <div class="col">
+                                <p>Imagen 3</p>
+                                <input type="file" (change)="uploadFile2($event)" accept=".png,.jpg"
+                                    *ngIf="!property!.images![2] || property!.images![2] == 'borrado'  " />
+                                <div>{{ uploadPercent2 | async }}</div>
+                                <a href='{{ property!.images![2] }}' target="_blank"
+                                    *ngIf="property!.images![2] && property!.images![2] != 'borrado' ">Imagen
+                                    3</a>
+                                <!-- <div class="progress">
+                                            <p><ngb-progressbar type="info" [value]='{{ uploadPercent | async }}'></ngb-progressbar></p>
+                                          </div> -->
+                            </div>
+                            <button type="button" class="btn btn-danger"
+                                *ngIf="property!.images![2] && property!.images![2] != 'borrado'"
+                                (click)="deletePhoto(property!.images![2],2)">Eliminar</button>
+                        </div>
+
+                        <div class="form-row form-group">
+                            <div class="col">
+                                <p>Imagen 4</p>
+                                <input type="file" (change)="uploadFile3($event)" accept=".png,.jpg"
+                                    *ngIf="!property!.images![3] || property!.images![3] == 'borrado'" />
+                                <div>{{ uploadPercent3 | async }}</div>
+                                <a href='{{ property!.images![3] }}' target="_blank"
+                                    *ngIf="property!.images![3] && property!.images![3] != 'borrado'  ">Imagen
+                                    4</a>
+                                <!-- <div class="progress">
+                                                <p><ngb-progressbar type="info" [value]='{{ uploadPercent | async }}'></ngb-progressbar></p>
+                                              </div> -->
+                            </div>
+                            <button type="button" class="btn btn-danger"
+                                *ngIf="property!.images![3] && property!.images![3] != 'borrado'"
+                                (click)="deletePhoto(property!.images![3],3)">Eliminar</button>
+                        </div>
+
+
+
+                        <div class="form-row form-group">
+                            <div class="col">
+                                <p>Imagen 5</p>
+                                <input type="file" (change)="uploadFile4($event)" accept=".png,.jpg"
+                                    *ngIf="!property!.images![4] || property!.images![4] == 'borrado' " />
+                                <div>{{ uploadPercent4 | async }}</div>
+                                <a href='{{ property!.images![4] }}' target="_blank"
+                                    *ngIf="property!.images![4] && property!.images![4] != 'borrado' ">Imagen
+                                    5</a>
+                                <!-- <div class="progress">
+                                            <p><ngb-progressbar type="info" [value]='{{ uploadPercent | async }}'></ngb-progressbar></p>
+                                          </div> -->
+                            </div>
+                            <button type="button" class="btn btn-danger"
+                                *ngIf="property!.images![4] && property!.images![4] != 'borrado'"
+                                (click)="deletePhoto(property!.images![4],4)">Eliminar</button>
+                        </div>
+
+
+                        <div class="form-row form-group">
+                            <div class="col">
+                                <p>Imagen 6</p>
+                                <input type="file" (change)="uploadFile5($event)" accept=".png,.jpg"
+                                    *ngIf="!property!.images![5] || property!.images![5] == 'borrado' " />
+                                <div>{{ uploadPercent5 | async }}</div>
+                                <a href='{{ property!.images![5] }}' target="_blank"
+                                    *ngIf="property!.images![5] && property!.images![5] != 'borrado'  ">Imagen
+                                    6</a>
+                                <!-- <div class="progress">
+                                                <p><ngb-progressbar type="info" [value]='{{ uploadPercent | async }}'></ngb-progressbar></p>
+                                              </div> -->
+                            </div>
+                            <button type="button" class="btn btn-danger"
+                                *ngIf="property!.images![5] && property!.images![5] != 'borrado'"
+                                (click)="deletePhoto(property!.images![5],5)">Eliminar</button>
+                        </div>
+
+
+                        <div class="form-row form-group">
+                            <div class="col">
+                                <p>Imagen 7</p>
+                                <input type="file" (change)="uploadFile6($event)" accept=".png,.jpg"
+                                    *ngIf="!property!.images![6] || property!.images![6] == 'borrado' " />
+                                <div>{{ uploadPercent6 | async }}</div>
+                                <a href='{{ property!.images![6] }}' target="_blank"
+                                    *ngIf="property!.images![6] && property!.images![6] != 'borrado'  ">Imagen
+                                    7</a>
+                                <!-- <div class="progress">
+                                                    <p><ngb-progressbar type="info" [value]='{{ uploadPercent | async }}'></ngb-progressbar></p>
+                                                  </div> -->
+                            </div>
+                            <button type="button" class="btn btn-danger"
+                                *ngIf="property!.images![6] && property!.images![6] != 'borrado'"
+                                (click)="deletePhoto(property!.images![6],6)">Eliminar</button>
+                        </div>
+
+
+                        <div class="form-row form-group">
+                            <div class="col">
+                                <p>Imagen 8</p>
+                                <input type="file" (change)="uploadFile7($event)" accept=".png,.jpg"
+                                    *ngIf="!property!.images![7] || property!.images![7] == 'borrado' " />
+                                <div>{{ uploadPercent7 | async }}</div>
+                                <a href='{{ property!.images![7] }}' target="_blank"
+                                    *ngIf="property!.images![7] && property!.images![7] != 'borrado' ">Imagen
+                                    8</a>
+                                <!-- <div class="progress">
+                                                        <p><ngb-progressbar type="info" [value]='{{ uploadPercent | async }}'></ngb-progressbar></p>
+                                                      </div> -->
+                            </div>
+                            <button type="button" class="btn btn-danger"
+                                *ngIf="property!.images![7] && property!.images![7] != 'borrado'"
+                                (click)="deletePhoto(property!.images![7],7)">Eliminar</button>
+                        </div>
+
+
+                        <div class="form-row form-group">
+                            <div class="col">
+                                <p>Imagen 9</p>
+                                <input type="file" (change)="uploadFile8($event)" accept=".png,.jpg"
+                                    *ngIf="!property!.images![8] || property!.images![8] == 'borrado' " />
+                                <div>{{ uploadPercent8 | async }}</div>
+                                <a href='{{ property!.images![8] }}' target="_blank"
+                                    *ngIf="property!.images![8] && property!.images![8] != 'borrado' ">Imagen
+                                    9</a>
+                                <!-- <div class="progress">
+                                                            <p><ngb-progressbar type="info" [value]='{{ uploadPercent | async }}'></ngb-progressbar></p>
+                                                          </div> -->
+                            </div>
+                            <button type="button" class="btn btn-danger"
+                                *ngIf="property!.images![8] && property!.images![8] != 'borrado'"
+                                (click)="deletePhoto(property!.images![8],8)">Eliminar</button>
+                        </div>
+                    </div>
+                    <div class="col-sm">
+                        <div class="form-row form-group">
+                            <div class="col">
+                                <p>Imagen 10</p>
+                                <input type="file" (change)="uploadFile9($event)" accept=".png,.jpg" 
+                                *ngIf="!property!.images![9] || property!.images![9] == 'borrado' "/>
+                                <div>{{ uploadPercent9 | async }}</div>
+                                <a href='{{ property!.images![9] }}' target="_blank" *ngIf="property!.images![9] && property!.images![9] != 'borrado'">Imagen
+                                    10</a>
+                                <!-- <div class="progress">
+                                          <p><ngb-progressbar type="info" [value]='{{ uploadPercent | async }}'></ngb-progressbar></p>
+                                        </div> -->
+                            </div>
+                            <button type="button" class="btn btn-danger"
+                                *ngIf="property!.images![9] && property!.images![9] != 'borrado'"
+                                (click)="deletePhoto(property!.images![9],9)">Eliminar</button>
+                        </div>
+                        <div class="form-row form-group">
+                            <div class="col">
+                                <p>Imagen 11</p>
+                                <input type="file" (change)="uploadFile10($event)" accept=".png,.jpg" 
+                                *ngIf="!property!.images![10] || property!.images![10] == 'borrado' "/>
+                                <div>{{ uploadPercent10 | async }}</div>
+                                <a href='{{ property!.images![10] }}' target="_blank" *ngIf="property!.images![10] && property!.images![10] != 'borrado' ">Imagen
+                                    11</a>
+                                <!-- <div class="progress">
+                                              <p><ngb-progressbar type="info" [value]='{{ uploadPercent | async }}'></ngb-progressbar></p>
+                                            </div> -->
+                            </div>
+                            <button type="button" class="btn btn-danger"
+                                *ngIf="property!.images![10] && property!.images![10] != 'borrado'"
+                                (click)="deletePhoto(property!.images![10],10)">Eliminar</button>
+                        </div>
+
+                        <div class="form-row form-group">
+                            <div class="col">
+                                <p>Imagen 12</p>
+                                <input type="file" (change)="uploadFile11($event)" accept=".png,.jpg" 
+                                *ngIf="!property!.images![11] || property!.images![11] == 'borrado' "/>
+                                <div>{{ uploadPercent11 | async }}</div>
+                                <a href='{{ property!.images![11] }}' target="_blank" *ngIf="property!.images![11] && property!.images![11] != 'borrado' ">Imagen
+                                    12</a>
+                                <!-- <div class="progress">
+                                                <p><ngb-progressbar type="info" [value]='{{ uploadPercent | async }}'></ngb-progressbar></p>
+                                              </div> -->
+                            </div>
+                            <button type="button" class="btn btn-danger"
+                                *ngIf="property!.images![11] && property!.images![11] != 'borrado'"
+                                (click)="deletePhoto(property!.images![11],11)">Eliminar</button>
+                        </div>
+
+                        <div class="form-row form-group">
+                            <div class="col">
+                                <p>Imagen 13</p>
+                                <input type="file" (change)="uploadFile12($event)" accept=".png,.jpg" 
+                                *ngIf="!property!.images![12] || property!.images![12] == 'borrado'"/>
+                                <div>{{ uploadPercent12 | async }}</div>
+                                <a href='{{ property!.images![12] }}' target="_blank" *ngIf="property!.images![12] && property!.images![12] != 'borrado' ">Imagen
+                                    13</a>
+                                <!-- <div class="progress">
+                                                    <p><ngb-progressbar type="info" [value]='{{ uploadPercent | async }}'></ngb-progressbar></p>
+                                                  </div> -->
+                            </div>
+                            <button type="button" class="btn btn-danger"
+                                *ngIf="property!.images![12] && property!.images![12] != 'borrado'"
+                                (click)="deletePhoto(property!.images![12],12)">Eliminar</button>
+                        </div>
+
+
+
+                        <div class="form-row form-group">
+                            <div class="col">
+                                <p>Imagen 14</p>
+                                <input type="file" (change)="uploadFile13($event)" accept=".png,.jpg" 
+                                *ngIf="!property!.images![13] || property!.images![13] == 'borrado'"/>
+                                <a href='{{ property!.images![13] }}' target="_blank" *ngIf="property!.images![13] && property!.images![13] != 'borrado' ">Imagen
+                                    14</a>
+                                <div>{{ uploadPercent13 | async }}</div>
+                                <!-- <div class="progress">
+                                                <p><ngb-progressbar type="info" [value]='{{ uploadPercent | async }}'></ngb-progressbar></p>
+                                              </div> -->
+                            </div>
+                            <button type="button" class="btn btn-danger"
+                                *ngIf="property!.images![13] && property!.images![13] != 'borrado'"
+                                (click)="deletePhoto(property!.images![13],13)">Eliminar</button>
+                        </div>
+
+
+                        <div class="form-row form-group">
+                            <div class="col">
+                                <p>Imagen 15</p>
+                                <input type="file" (change)="uploadFile14($event)" accept=".png,.jpg" 
+                                *ngIf="!property!.images![14] || property!.images![14] == 'borrado'"/>
+                                <div>{{ uploadPercent14 | async }}</div>
+                                <a href='{{ property!.images![14] }}' target="_blank" *ngIf="property!.images![14] && property!.images![14] != 'borrado' ">Imagen
+                                    15</a>
+                                <!-- <div class="progress">
+                                                    <p><ngb-progressbar type="info" [value]='{{ uploadPercent | async }}'></ngb-progressbar></p>
+                                                  </div> -->
+                            </div>
+                            <button type="button" class="btn btn-danger"
+                                *ngIf="property!.images![14] && property!.images![14] != 'borrado'"
+                                (click)="deletePhoto(property!.images![14],14)">Eliminar</button>
+                        </div>
+                    
+
+                        <div class="form-row form-group">
+                            <div class="col">
+                                <p>Imagen 16</p>
+                                <input type="file" (change)="uploadFile15($event)" accept=".png,.jpg" 
+                                *ngIf="!property!.images![15] || property!.images![15] == 'borrado'"/>
+                                <div>{{ uploadPercent15 | async }}</div>
+                                <a href='{{ property!.images![15] }}' target="_blank" *ngIf="property!.images![15] && property!.images![15] != 'borrado'  ">Imagen
+                                    16</a>
+                                <!-- <div class="progress">
+                                                        <p><ngb-progressbar type="info" [value]='{{ uploadPercent | async }}'></ngb-progressbar></p>
+                                                      </div> -->
+                            </div>
+                            <button type="button" class="btn btn-danger"
+                                *ngIf="property!.images![15] && property!.images![15] != 'borrado'"
+                                (click)="deletePhoto(property!.images![15],15)">Eliminar</button>
+                        </div>
+
+
+                        <div class="form-row form-group">
+                            <div class="col">
+                                <p>Imagen 17</p>
+                                <input type="file" (change)="uploadFile16($event)" accept=".png,.jpg" 
+                                *ngIf="!property!.images![16] || property!.images![16] == 'borrado'" />
+                                <div>{{ uploadPercent16 | async }}</div>
+                                <a href='{{ property!.images![16] }}' target="_blank" *ngIf="property!.images![16]  && property!.images![16] != 'borrado'  ">Imagen
+                                    17</a>
+                                <!-- <div class="progress">
+                                                            <p><ngb-progressbar type="info" [value]='{{ uploadPercent | async }}'></ngb-progressbar></p>
+                                                          </div> -->
+                            </div>
+                            <button type="button" class="btn btn-danger"
+                                *ngIf="property!.images![16] && property!.images![16] != 'borrado'"
+                                (click)="deletePhoto(property!.images![16],16)">Eliminar</button>
+                        </div>
+                    </div>
+
+
+                    <div class="col-sm">
+                        <div class="form-row form-group">
+                            <div class="col">
+                                <p>Imagen 18</p>
+                                <input type="file" (change)="uploadFile17($event)" accept=".png,.jpg" 
+                                *ngIf="!property!.images![17] || property!.images![17] == 'borrado'"/>
+                                <div>{{ uploadPercent17 | async }}</div>
+                                <a href='{{ property!.images![17] }}' target="_blank" *ngIf="property!.images![17] && property!.images![17] != 'borrado'  ">Imagen
+                                    18</a>
+                                <!-- <div class="progress">
+                                              <p><ngb-progressbar type="info" [value]='{{ uploadPercent | async }}'></ngb-progressbar></p>
+                                            </div> -->
+                            </div>
+                            <button type="button" class="btn btn-danger"
+                                *ngIf="property!.images![17] && property!.images![17] != 'borrado'"
+                                (click)="deletePhoto(property!.images![17],17)">Eliminar</button>
+                        </div>
+
+
+                        <div class="form-row form-group">
+                            <div class="col">
+                                <p>Imagen 19</p>
+                                <input type="file" (change)="uploadFile18($event)" accept=".png,.jpg" 
+                                *ngIf="!property!.images![18] || property!.images![18] == 'borrado'"/>
+                                <div>{{ uploadPercent18 | async }}</div>
+                                <a href='{{ property!.images![18] }}' target="_blank" *ngIf="property!.images![18] && property!.images![18] != 'borrado' ">Imagen
+                                    19</a>
+                                <!-- <div class="progress">
+                                                  <p><ngb-progressbar type="info" [value]='{{ uploadPercent | async }}'></ngb-progressbar></p>
+                                                </div> -->
+                            </div>
+                            <button type="button" class="btn btn-danger"
+                                *ngIf="property!.images![18] && property!.images![18] != 'borrado'"
+                                (click)="deletePhoto(property!.images![18],18)">Eliminar</button>
+                        </div>
+
+                        <div class="form-row form-group">
+                            <div class="col">
+                                <p>Imagen 20</p>
+                                <input type="file" (change)="uploadFile19($event)" accept=".png,.jpg" 
+                                *ngIf="!property!.images![19] || property!.images![19] == 'borrado'"/>
+                                <div>{{ uploadPercent19 | async }}</div>
+                                <a href='{{ property!.images![19] }}' target="_blank" *ngIf="property!.images![19] && property!.images![19] != 'borrado'  ">Imagen
+                                    20</a>
+                                <!-- <div class="progress">
+                                                    <p><ngb-progressbar type="info" [value]='{{ uploadPercent | async }}'></ngb-progressbar></p>
+                                                  </div> -->
+                            </div>
+                            <button type="button" class="btn btn-danger"
+                                *ngIf="property!.images![19] && property!.images![19] != 'borrado'"
+                                (click)="deletePhoto(property!.images![19],19)">Eliminar</button>
+                        </div>
+
+                        <div class="form-row form-group">
+                            <div class="col">
+                                <p>Imagen 21</p>
+                                <input type="file" (change)="uploadFile20($event)" accept=".png,.jpg" 
+                                *ngIf="!property!.images![20] || property!.images![20] == 'borrado'"/>
+                                <div>{{ uploadPercent20 | async }}</div>
+                                <a href='{{ property!.images![20] }}' target="_blank" *ngIf="property!.images![20] && property!.images![20] != 'borrado' ">Imagen
+                                    21</a>
+                                <!-- <div class="progress">
+                                                        <p><ngb-progressbar type="info" [value]='{{ uploadPercent | async }}'></ngb-progressbar></p>
+                                                      </div> -->
+                            </div>
+                            <button type="button" class="btn btn-danger"
+                                *ngIf="property!.images![20] && property!.images![20] != 'borrado'"
+                                (click)="deletePhoto(property!.images![20],20)">Eliminar</button>
+                        </div>
+
+
+
+                        <div class="form-row form-group">
+                            <div class="col">
+                                <p>Imagen 22</p>
+                                <input type="file" (change)="uploadFile21($event)" accept=".png,.jpg" 
+                                *ngIf="!property!.images![21] || property!.images![21] == 'borrado'"/>
+                                <div>{{ uploadPercent21 | async }}</div>
+                                <a href='{{ property!.images![21] }}' target="_blank" *ngIf="property!.images![21] && property!.images![21] != 'borrado'  ">Imagen
+                                    22</a>
+                                <!-- <div class="progress">
+                                                    <p><ngb-progressbar type="info" [value]='{{ uploadPercent | async }}'></ngb-progressbar></p>
+                                                  </div> -->
+                            </div>
+                            <button type="button" class="btn btn-danger"
+                                *ngIf="property!.images![21] && property!.images![21] != 'borrado'"
+                                (click)="deletePhoto(property!.images![21],21)">Eliminar</button>
+                        </div>
+
+                        <div class="form-row form-group">
+                            <div class="col">
+                                <p>Imagen 23</p>
+                                <input type="file" (change)="uploadFile22($event)" accept=".png,.jpg" 
+                                *ngIf="!property!.images![22] || property!.images![22] == 'borrado'"/>
+                                <div>{{ uploadPercent22 | async }}</div>
+                                <a href='{{ property!.images![22] }}' target="_blank" *ngIf="property!.images![22] && property!.images![22] != 'borrado'  ">Imagen
+                                    23</a>
+                                <!-- <div class="progress">
+                                                        <p><ngb-progressbar type="info" [value]='{{ uploadPercent | async }}'></ngb-progressbar></p>
+                                                      </div> -->
+                            </div>
+                            <button type="button" class="btn btn-danger"
+                                *ngIf="property!.images![22] && property!.images![22] != 'borrado'"
+                                (click)="deletePhoto(property!.images![22],22)">Eliminar</button>
+                        </div>
+
+
+                        <div class="form-row form-group">
+                            <div class="col">
+                                <p>Imagen 24</p>
+                                <input type="file" (change)="uploadFile23($event)" accept=".png,.jpg" 
+                                *ngIf="!property!.images![23] || property!.images![23] == 'borrado'"/>
+                                <div>{{ uploadPercent23 | async }}</div>
+                                <a href='{{ property!.images![23] }}' target="_blank" *ngIf="property!.images![23] && property!.images![23] != 'borrado' ">Imagen
+                                    24</a>
+                                <!-- <div class="progress">
+                                                            <p><ngb-progressbar type="info" [value]='{{ uploadPercent | async }}'></ngb-progressbar></p>
+                                                          </div> -->
+                            </div>
+                            <button type="button" class="btn btn-danger"
+                                *ngIf="property!.images![23] && property!.images![23] != 'borrado'"
+                                (click)="deletePhoto(property!.images![23],23)">Eliminar</button>
+                        </div>
+
+
+                        <div class="form-row form-group">
+                            <div class="col">
+                                <p>Imagen 25</p>
+                                <input type="file" (change)="uploadFile24($event)" accept=".png,.jpg" 
+                                *ngIf="!property!.images![24] || property!.images![24] == 'borrado'"/>
+                                <div>{{ uploadPercent24 | async }}</div>
+                                <a href='{{ property!.images![24] }}' target="_blank" *ngIf="property!.images![24] && property!.images![24] != 'borrado' ">Imagen
+                                    25</a>
+                                <!-- <div class="progress">
+                                                                <p><ngb-progressbar type="info" [value]='{{ uploadPercent | async }}'></ngb-progressbar></p>
+                                                              </div> -->
+                            </div>
+                            <button type="button" class="btn btn-danger"
+                                *ngIf="property!.images![24] && property!.images![24] != 'borrado'"
+                                (click)="deletePhoto(property!.images![24],24)">Eliminar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row form-group">
+                    <div class="col">
+                        <button class="btn btn-block btn-success btn-lg" type="submit">Agregar propiedad</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+</div>
+
+<app-waiting *ngIf="property == null"></app-waiting>

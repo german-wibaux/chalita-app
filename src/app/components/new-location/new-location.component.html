@@ -1,0 +1,33 @@
+<div class="col-12 card-body bg-secondary" *ngIf="location != null">
+    <div>
+        <button type="button" class="btn btn-primary" routerLink='/edit'>Volver atras</button>
+    </div>
+    <div class="text-center mb-5">
+        <h1 class="h2 mb-2">Crear una nueva localidad</h1>
+        <span>No hay campos obligatorios lo que se cargue es lo que se vera en la pagina</span>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-12 col-lg-9">
+            <form (ngSubmit)="onSaveLocation()" #formNew="ngForm">
+            
+                <div class="form-row form-group">
+                    <div class="col">
+                        <input [(ngModel)]='location.name' [ngModelOptions]="{standalone: true}" #descripcion='ngModel'
+                            class="form-control form-control-lg" type="text" placeholder="Nombre" />
+                    </div>
+                </div>
+
+                <div class="form-row form-group">
+                    <div class="col"  *ngIf="waiting" >
+                        <button class="btn btn-block btn-success btn-lg" type="submit">Agregar localidad</button>
+                    </div>
+                </div>
+            
+            </form>
+        </div>
+    </div>
+    
+
+</div>
+
+<app-waiting *ngIf="location == null"></app-waiting>

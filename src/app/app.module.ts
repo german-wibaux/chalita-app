@@ -25,6 +25,13 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { FormsModule } from "@angular/forms";
 import { Ng2CompleterModule } from 'ng2-completer';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginPageComponent } from './components/login-page/login-page.component';
+import { EditComponent } from './components/edit/edit.component';
+import { NewLocationComponent } from './components/new-location/new-location.component';
+import { DeletedComponent } from './components/deleted/deleted.component';
+import { NewPropertyComponent } from './components/new-property/new-property.component';
+import { DatePipe } from '@angular/common';
+import { UpdatePropertyComponent } from './components/update-property/update-property.component';
 
 
 @NgModule({
@@ -38,7 +45,13 @@ import { HttpClientModule } from '@angular/common/http';
     VentasComponent,
     AlquileresComponent,
     ResultSearchComponent,
-    PropertyComponent
+    PropertyComponent,
+    LoginPageComponent,
+    EditComponent,
+    NewLocationComponent,
+    DeletedComponent,
+    NewPropertyComponent,
+    UpdatePropertyComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +67,9 @@ import { HttpClientModule } from '@angular/common/http';
     CarouselModule.forRoot(),
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    DatePipe
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

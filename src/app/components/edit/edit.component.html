@@ -1,29 +1,28 @@
+<section class=" d-flex justify-content-center">
+    <div class="row col-10">
+        <button type="button" class="btn btn-primary" routerLink='/new-property'>Agregar propiedad</button>
+        <button type="button" class="btn btn-primary" routerLink='/new-location'>Agregar localidad</button>
+        <button type="button" class="btn btn-primary" routerLink='/deleted'>Propiedades eliminadas</button>
+    </div>
 
-    <section class=" d-flex justify-content-center">
-            <div class="row col-10">
-                <button type="button" class="btn btn-primary" routerLink='/new-property' >Agregar propiedad</button>
-                <button type="button" class="btn btn-primary" routerLink='/new-location' >Agregar localidad</button>
-                <button type="button" class="btn btn-primary" routerLink='/deleted' >Propiedades eliminadas</button>
-            </div>
-        
-    </section>
+</section>
 
-  <section class=" d-flex justify-content-center" ngOnChange="showChange()">
-  <div class="row col-10">
-    <div class="col">
-        <table class="table table-borderless table-hover align-items-center">
-            <thead>
-                <tr>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">Descripcion</th>
-                    <th scope="col">Tipo de propiedad</th>
-                    <th scope="col">Codigo</th>
-                    <th scope="col"></th>
-                </tr>
-            </thead>
-            <tbody>
+<section class=" d-flex justify-content-center" ngOnChange="showChange()">
+    <div class="row col-10">
+        <div class="col">
+            <table class="table table-borderless table-hover align-items-center">
+                <thead>
+                    <tr>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Descripcion</th>
+                        <th scope="col">Tipo de propiedad</th>
+                        <th scope="col">Codigo</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
 
-                
+
                     <tr *ngFor="let property of properties" class="bg-white ">
                         <th scope="row">
                             <a class="media align-items-center">
@@ -40,10 +39,10 @@
                             <!-- <span class="badge badge-success">Active</span> -->
                             {{ property.code }}
                         </td>
-                     
+
                         <td>
-                            <div class="dropdown">
-                                <button class="btn btn-sm btn-outline-primary dropdown-toggle dropdown-toggle-no-arrow" type="button" id="dropdownMenuButton-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <!-- <div class="dropdown">
+                                <button class="btn btn-sm btn-outline-primary dropdown-toggle dropdown-toggle-no-arrow" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <i class="icon-dots-three-horizontal"></i>
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-sm" aria-labelledby="dropdownMenuButton">
@@ -51,21 +50,32 @@
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item delete-button" (click)="onDeleteProperty(property)" >Borrar</a>
                                 </div>
+                            </div> -->
+                            <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="icon-dots-three-horizontal"></i>
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                    <li><a class="dropdown-item"
+                                            [routerLink]="['/update-prop' , property.id ]">Ver/Editar</a></li>
+                                    <li><a class="dropdown-item delete-button"
+                                            (click)="onDeleteProperty(property)">Borrar</a></li>
+                                </ul>
                             </div>
-                        </td>                        
-                    </tr>  
-                                  
-                 
-                
-                
+                        </td>
+                    </tr>
 
-            </tbody>
-        </table>
+
+
+
+
+                </tbody>
+            </table>
+        </div>
+        <!--end of col-->
     </div>
-    <!--end of col-->
-</div>
-<!--end of row-->
+    <!--end of row-->
 
 </section>
 <!--end of section-->
-

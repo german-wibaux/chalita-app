@@ -77,20 +77,17 @@ export class AppComponent {
   }
 
   onAnchorClick ( ) {
-    // console.log('paso');
     this.route.fragment.subscribe ( f => {
-      // console.log(f)
-      const element = document.querySelector ( "#" + f )
-      // console.log(element)      
+      const element = document.querySelector ( "#" + f )  
       if ( element ) element.scrollIntoView ({behavior: 'smooth', block: 'start', inline: 'nearest'})
     });  
   }
 
   searchProperty() {
-    debugger;
-    this.router.navigate(['/result', this.kindOperation, this.kindProperty, this.location]);
+    this.router.navigate(['/result', this.kindOperation, this.kindProperty, this.location]);    
     this.resetParameters();
     this.search = '1.5';
+    this.onAnchorClick();
   }
 
   resetParameters() {
@@ -107,6 +104,10 @@ export class AppComponent {
     //console.log(url);
     // this.search1 = '1.5';
     this.router.navigateByUrl(url);
+    this.route.fragment.subscribe ( f => {
+      const element = document.querySelector ( "#" + 'acces' )
+      if ( element ) element.scrollIntoView ({behavior: 'smooth', block: 'start', inline: 'nearest'})
+    }); 
   }
 
   isLoggedIn(){

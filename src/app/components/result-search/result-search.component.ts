@@ -15,7 +15,6 @@ export class ResultSearchComponent implements OnInit {
 
   constructor(private rutaActiva: ActivatedRoute,
               private propertiesService: PropertyService) {
-                debugger;
     this.rutaActiva.params.subscribe(
       (params: Params) => {
         

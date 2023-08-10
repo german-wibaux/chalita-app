@@ -6,6 +6,7 @@ import { LocationService } from './services/location.service';
 import { OperationService } from './services/operation.service';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { PropertyService } from './services/property.service';
+import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -28,10 +29,11 @@ export class AppComponent {
 
   constructor(
     private router: Router,
-    // private route: ActivatedRoute,
+    private route: ActivatedRoute,
     private operationService: OperationService,
     private locationService: LocationService,
-    private propertiesService: PropertyService
+    private propertiesService: PropertyService,
+    private authService: AuthService
   ){
     this.operations = [];
     this.propertiesService.getProperties().subscribe( properties => {
@@ -75,14 +77,24 @@ export class AppComponent {
   }
 
   onAnchorClick ( ) {
-    alert("On anchor click")        
+    this.route.fragment.subscribe ( f => {
+      const element = document.querySelector ( "#" + f )  
+      if ( element ) element.scrollIntoView ({behavior: 'smooth', block: 'start', inline: 'nearest'})
+    });  
+  }
+
+  onAnchorClickSeted (fragment:string) {
+    this.route.fragment.subscribe ( f => {
+      const element = document.querySelector ( "#" + fragment ) 
+      if ( element ) element.scrollIntoView ({behavior: 'smooth', block: 'start', inline: 'nearest'})
+    });  
   }
 
   searchProperty() {
-    debugger;
-    this.router.navigate(['/result', this.kindOperation, this.kindProperty, this.location]);
+    this.router.navigate(['/result', this.kindOperation, this.kindProperty, this.location]);    
     this.resetParameters();
     this.search = '1.5';
+    this.onAnchorClickSeted('acces');
   }
 
   resetParameters() {
@@ -99,6 +111,18 @@ export class AppComponent {
     //console.log(url);
     // this.search1 = '1.5';
     this.router.navigateByUrl(url);
+    this.route.fragment.subscribe ( f => {
+      const element = document.querySelector ( "#" + 'acces' )
+      if ( element ) element.scrollIntoView ({behavior: 'smooth', block: 'start', inline: 'nearest'})
+    });
+  }
+
+  isLoggedIn(){
+    return this.authService.isLoggedIn();
+  }
+
+  logout() {
+    this.authService.logout();
   }
 
 }

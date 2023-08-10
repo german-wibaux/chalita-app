@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { AngularFirestoreCollection, AngularFirestoreDocument, AngularFirestore } from 'angularfire2/firestore';
 import { PropertyInterface } from '../models/propiedadInterface';
 import { Observable } from 'rxjs';
 import { UrldeletedInterface } from '../models/urldeletedInterface';
 import { map } from 'rxjs/operators';
+import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
 
 @Injectable({
   providedIn: 'root'

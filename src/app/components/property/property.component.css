@@ -3,6 +3,8 @@
     height:360px;
 }
 
+
+
 .images {
     position: absolute;
     top: 0;
@@ -17,10 +19,14 @@
 .custom {
     width: 100%;  
     display: flex;
-    justify-content: center;   
+    justify-content: center;
 }
 
 .custom > carousel {
+    width: 100%;
+}
+
+.carousel {
     width: 100%;
 }
 
@@ -60,7 +66,7 @@ article > h4 {
 
 .inside-carousel {
     height: 25rem;
-    width: auto;
+    width: 45rem;
 }
 
 .map {
@@ -79,10 +85,14 @@ article > h4 {
     align-items: center;
 }
 
-@media screen and (max-width:400px) {
+@media screen and (max-width:720px) {
     
     .custom {
         display: unset; 
+    }
+
+    .inside-carousel {
+        width: 25rem;
     }
 
 }

@@ -1,49 +1,46 @@
-
-
-
 <div class="basic-2">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12 col-xl-12" *ngIf="property != null" >
+            <div class="col-lg-12 col-xl-12" *ngIf="property != null">
                 <section class="custom">
-            
-            
-            
-                    <carousel class="d-flex justify-content-center" >
-                        <slide *ngFor="let slide of slides; let index=index">
-                          <img [src]="slide.image" alt="image slide" class="inside-carousel" >
-                       
-                          <div class="carousel-caption">
-                          </div>
+
+
+
+                    <carousel class="d-flex justify-content-center">
+                        <slide class="slide-carousel" *ngFor="let slide of slides; let index=index">
+                            <img [src]="slide.image" alt="image slide" class="inside-carousel">
+
+                            <div class="carousel-caption">
+                            </div>
                         </slide>
-                      </carousel>
-                    
-            
+                    </carousel>
+
+
                 </section>
                 <section *ngIf="property != null" class="section-custom">
                     <div class="row justify-content-left custom-row">
                         <div class="col-12 col-md-8 col-lg-7 features-container">
-                            <article class="principal-features" >
+                            <article class="principal-features">
                                 <h4> {{property.name}}</h4>
-            
+
                                 <h6 class="tag"> Descripción</h6>
-                                
+
                                 <p>
                                     {{ property.description }}
                                 </p>
-                                
-            
-                                <h6 class="tag"> Tipo de Propiedad  </h6>
-                                
-                                <p>  {{ property.kindProperty }} </p>
-                                
+
+
+                                <h6 class="tag"> Tipo de Propiedad </h6>
+
+                                <p> {{ property.kindProperty }} </p>
+
                                 <h6 class="tag"> Tipo de Operacion </h6>
-                                
-                                <p>  {{ property.kindOperation }} </p>
-            
-            
+
+                                <p> {{ property.kindOperation }} </p>
+
+
                             </article>
-            
+
                         </div>
                         <!--end of col-->
                         <div class="col-12 col-md-4">
@@ -104,24 +101,22 @@
                                     </li>
                                 </ul>
                             </div>
-            
+
                         </div>
                         <!--end of col-->
                     </div>
                     <!--end of row-->
-                    <div class="row justify-content-left " >
-                            <iframe class="map" [src]='url' 
-                             allowfullscreen></iframe>
-                        
+                    <div class="row justify-content-left ">
+                        <iframe class="map" [src]='url' allowfullscreen></iframe>
+
                     </div>
                 </section>
-            
-                
-            
+
+
+
             </div>
         </div>
     </div>
 </div>
 
-<app-waiting *ngIf="property == null" ></app-waiting>
-
+<app-waiting *ngIf="property == null"></app-waiting>

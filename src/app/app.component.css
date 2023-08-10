@@ -108,6 +108,10 @@
     padding-top: 4rem;
 }
 
+.general-container {
+    width: 103%;
+}
+
 @media screen and (max-width:500px) {
     .searchbar {
         flex-direction: column;

@@ -59,8 +59,8 @@ article > h4 {
 }
 
 .inside-carousel {
-    height: 22rem;
-    width: 40rem;
+    height: 25rem;
+    width: auto;
 }
 
 .map {

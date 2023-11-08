@@ -1,235 +1,269 @@
 <!-- <div class="general-container" > -->
-    <nav id="navbarExample" class="navbar navbar-expand-lg fixed-top navbar-light" aria-label="Main navigation">
-        <div class="container">
-            <a class="navbar-brand" href="#"><img class="logo-chalita" src="/assets/img/chalita/logo-img.png" alt=""></a>
-            <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse"
-                aria-controls="navbarsExampleDefault" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
-                <ul class="navbar-nav ms-auto navbar-nav-scroll">
-                    <li class="nav-item">
-                        <a class="nav-link" routerLink="/">Inicio
-                            <!-- <span class="sr-only">(current)</span> -->
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" routerLink="/alqui">Alquileres</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" routerLink="/ventas">Ventas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link">Turismo</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link">Desarrollos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" routerLink="/" fragment="about" (click)="onAnchorClick()">Nosotros</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
-                            Contacto
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" routerLink='/login' fragment="acces" *ngIf='!isLoggedIn()'
-                            (click)="onAnchorClick()">Ingresar</a>
-    
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" routerLink='/edit' *ngIf='isLoggedIn()'>Administracion</a>
-                    </li>
-                    <li class="nav-item" *ngIf='isLoggedIn()'>
-                        <a class="nav-link" (click)='logout()'>Salir</a>
-                    </li>
-                    <li class="nav-item" *ngIf='false'>
-                        <a class="nav-link">Salir</a>
-                    </li>
-                    <hr>
-                </ul>
-            </div>
+<nav id="navbarExample" class="navbar navbar-expand-lg fixed-top navbar-light" aria-label="Main navigation">
+    <div class="container">
+        <a class="navbar-brand" href="#"><img class="logo-chalita" src="/assets/img/chalita/logo-img.png" alt=""></a>
+        <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse"
+            aria-controls="navbarsExampleDefault" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav ms-auto navbar-nav-scroll">
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/">Inicio
+                        <!-- <span class="sr-only">(current)</span> -->
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/alqui">Alquileres</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/ventas">Ventas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link">Turismo</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link">Desarrollos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/" fragment="about" (click)="onAnchorClick()">Nosotros</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+                        Contacto
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink='/login' fragment="acces" *ngIf='!isLoggedIn()'
+                        (click)="onAnchorClick()">Ingresar</a>
+
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink='/edit' *ngIf='isLoggedIn()'>Administracion</a>
+                </li>
+                <li class="nav-item" *ngIf='isLoggedIn()'>
+                    <a class="nav-link" (click)='logout()'>Salir</a>
+                </li>
+                <li class="nav-item" *ngIf='false'>
+                    <a class="nav-link">Salir</a>
+                </li>
+                <hr>
+            </ul>
         </div>
-    </nav>
-    <header id="header" class="header">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-xl-7">
-                    <form class="card form-left" >
-                        <div class="row no-gutters align-items-center form-res searchbar">
-                            
+    </div>
+</nav>
+<header id="header" class="header">
+    <div class="container header-container">
+        <div class="row">
+            <div class="col-lg-6 col-xl-7">
+                <form class="card form-left">
+                    <div class="row no-gutters align-items-center form-res searchbar">
+
+                        <div class="">
                             <div class="">
-                                <div class="">
-                                    <button type="button" class="btn btn-success dropdown-toggle dropdown-toggle-split" id="dropdownMenuButton2"
-                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                <button type="button" class="btn btn-success dropdown-toggle dropdown-toggle-split"
+                                    id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
                                     {{ kindOperation }}
-                                    </button>
-                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                                        <li *ngFor="let operation of operations" ><a class="dropdown-item" (click)='onSetKindOperation($event.target)'>{{ operation.name }}</a></li>
-                                    </ul>
-                                </div>
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                    <li *ngFor="let operation of operations"><a class="dropdown-item"
+                                            (click)='onSetKindOperation($event.target)'>{{ operation.name }}</a></li>
+                                </ul>
                             </div>
-    
+                        </div>
+
+                        <div class="">
+
                             <div class="">
-    
-                                <div class="">
-                                    <button type="button" class="btn btn-success dropdown-toggle dropdown-toggle-split" id="dropdownMenuButton1"
-                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                <button type="button" class="btn btn-success dropdown-toggle dropdown-toggle-split"
+                                    id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                     {{ kindProperty }}
-                                    </button>
-    
-                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                        
-                                        <li><a class="dropdown-item" (click)='onSetKindProperty($event.target)'>Campo</a></li>
-                                        <li><a class="dropdown-item" (click)='onSetKindProperty($event.target)'>Casa</a></li>
-                                        <li><a class="dropdown-item" (click)='onSetKindProperty($event.target)'>Casa de Campo</a></li>
-                                        <li><a class="dropdown-item" (click)='onSetKindProperty($event.target)'>Chacra</a></li>
-                                        <li><a class="dropdown-item" (click)='onSetKindProperty($event.target)'>Departamento</a></li>
-                                        <li><a class="dropdown-item" (click)='onSetKindProperty($event.target)'>Duplex</a></li>
-                                        <li><a class="dropdown-item" (click)='onSetKindProperty($event.target)'>Galpón</a></li>
-                                        <li><a class="dropdown-item" (click)='onSetKindProperty($event.target)'>Local</a></li>
-                                        <li><a class="dropdown-item" (click)='onSetKindProperty($event.target)'>Loteo</a></li>
-                                        <li><a class="dropdown-item" (click)='onSetKindProperty($event.target)'>Terreno</a></li>
-                                        <li><a class="dropdown-item" (click)='onSetKindProperty($event.target)'>Quinta</a></li> 
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="">
-                                <div>
-                                    <button type="button" class="btn btn-success dropdown-toggle dropdown-toggle-split" id="dropdownMenuButton2"
-                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                    {{ location }}
-                                    </button>
-                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
-                                        <li *ngFor="let location of locations" ><a class="dropdown-item" (click)='onSetLocation($event.target)'>{{ location.name }}</a></li>
-                                    </ul>
-    
-                                </div>
-                            </div>
-    
-                            <div class="">
-                                <div class="btn-custom">
-                                    <button class="btn btn-lg" fragment="acces" (click)="searchProperty()">
-    
-                                            <fa-icon [style.font-size.rem]="search" [icon]="faSearch"></fa-icon>                               
-                                    
-                                    </button>
-                                </div>
-                            </div>
-    
-                        </div>
-                    </form>
-                </div>
-                <div class="col-lg-6 col-xl-5">
-                    <form class="card card-sm form-left" (ngSubmit)=searchProperty()>
-                        <div class="card-body row no-gutters align-items-center code-search">
-    
-                            <div class="">
-                                <div class="">
-                                    <ng2-completer [(ngModel)]="searchStr" name="codesearch" [datasource]="codes"
-                                        [minSearchLength]="0" [fieldTabindex]="5" placeholder="Búsqueda por codigo"
-                                        (selected)="searchCode()"></ng2-completer>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-    
-        </div>
-    </header>
-    <section class="sect-top-abs">
-        <div class="top-abs">
-            <p>
-                Agradecemos su visita. Nos interesa su opinión y sugerencias para mejorar nuestro servicio
-            </p>
-        </div>
-    </section>
-    
-    <router-outlet id="acces"></router-outlet>
-    <app-about id="about"></app-about>
-    <app-parallax-comp></app-parallax-comp>
-    <app-whatsapp-icon></app-whatsapp-icon>
-    
-    <div class="footer bg-gray">
-        <img class="decoration-circles" src="assets/img/decoration-circles.png" alt="alternative" />
-        <div class="container">
-            <div class="row">
-                <div class="row">
-                    <div class="col-lg-7 map-container">
-                        <!--end of col-->
-                        <div class="col-12 col-lg-12 map-foo">
-                            <h2>Nuestra ubicacion</h2>
-    
-                            <div class="mapa-index">
-                                <iframe
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3186.5045572329122!2d-57.14207818470448!3d-36.99775767990838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x959b9d0ed97e3bcb%3A0x615582488df2dd67!2sAvellaneda%2073%2C%20B7163EEA%20Gral.%20Juan%20Madariaga%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1631134833111!5m2!1ses!2sar"
-                                    height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                            </div>
-                        </div>
-                        <!--end of col-->
-                    </div>
-                    <div class="col-lg-4 links-container">
-                        <div class="row">
-                            <div>
-                                <ul>
-                                    <li>
-                                        <a routerLink="/alqui">Alquileres</a>
+                                </button>
+
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+
+                                    <li><a class="dropdown-item" (click)='onSetKindProperty($event.target)'>Campo</a>
                                     </li>
-                                    <li>
-                                        <a routerLink="/ventas">Ventas</a>
+                                    <li><a class="dropdown-item" (click)='onSetKindProperty($event.target)'>Casa</a>
                                     </li>
-                                    <li>
-                                        <a routerLink="/">Turismo</a>
+                                    <li><a class="dropdown-item" (click)='onSetKindProperty($event.target)'>Casa de
+                                            Campo</a></li>
+                                    <li><a class="dropdown-item" (click)='onSetKindProperty($event.target)'>Chacra</a>
                                     </li>
-                                    <li>
-                                        <a routerLink="/">Desarrollos</a>
+                                    <li><a class="dropdown-item"
+                                            (click)='onSetKindProperty($event.target)'>Departamento</a></li>
+                                    <li><a class="dropdown-item" (click)='onSetKindProperty($event.target)'>Duplex</a>
                                     </li>
-                                    <li>
-                                        <a routerLink="/" fragment="about" (click)=onAnchorClick()>Nosotros</a>
-    
+                                    <li><a class="dropdown-item" (click)='onSetKindProperty($event.target)'>Galpón</a>
                                     </li>
-                                    <li>
-                                        <a href="#">Contacto</a>
+                                    <li><a class="dropdown-item" (click)='onSetKindProperty($event.target)'>Local</a>
+                                    </li>
+                                    <li><a class="dropdown-item" (click)='onSetKindProperty($event.target)'>Loteo</a>
+                                    </li>
+                                    <li><a class="dropdown-item" (click)='onSetKindProperty($event.target)'>Terreno</a>
+                                    </li>
+                                    <li><a class="dropdown-item" (click)='onSetKindProperty($event.target)'>Quinta</a>
                                     </li>
                                 </ul>
                             </div>
-                            <!--end of col-->
-    
-    
                         </div>
-                        <!--end of row-->
-                        <!-- <div class="col-md-4 flotar">
-                            
-                        </div> -->
+                        <div class="">
+                            <div>
+                                <button type="button" class="btn btn-success dropdown-toggle dropdown-toggle-split"
+                                    id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
+                                    {{ location }}
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                    <li *ngFor="let location of locations"><a class="dropdown-item"
+                                            (click)='onSetLocation($event.target)'>{{ location.name }}</a></li>
+                                </ul>
+
+                            </div>
+                        </div>
+
+                        <div class="">
+                            <div class="btn-custom">
+                                <button class="btn btn-lg" fragment="acces" (click)="searchProperty()">
+
+                                    <fa-icon [style.font-size.rem]="search" [icon]="faSearch"></fa-icon>
+
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+            <div class="col-lg-6 col-xl-5">
+                <form class="card card-sm form-left" (ngSubmit)=searchProperty()>
+                    <div
+                        class="card container autocomplete-container code-search d-flex align-items-center justify-space-between">
+
+                        <div class="input-search-container">
+                            <input [value]="propertySearchInputValue" id="car" #propertySearchInput
+                                placeholder="Buscar propiedad" type="text" autocomplete="off" onkeydown="return (event.keyCode!=13);">
+                                <span [ngClass]="{'show-clear-button': showClearButton === true}" class="clear-btn" (click)="removeValueInput()" >X</span>
+                            <!-- <div class="">
+                                <ng2-completer [(ngModel)]="searchStr" name="codesearch" [datasource]="codes"
+                                        [minSearchLength]="0" [fieldTabindex]="5" placeholder="Búsqueda por codigo"
+                                        (selected)="searchCode()"></ng2-completer>
+                                
+                            </div> -->
+                        </div>
+                        <div>
+                            <!--  DropDown Starts  -->
+                            <div class="card autocomplete-body" #autocompleteForm [hidden]="!showSearches">
+                                <div class="search">
+                                    <div *ngFor="let code of searchedProperties" tappable (click)="searchCode(code)"
+                                        class="search-result">
+                                        {{code}}
+                                    </div>
+                                </div>
+                                <p class="search"
+                                    *ngIf="searchedProperties && searchedProperties.length <= 0 && !isSearching">No se
+                                    encuentra el código</p>
+                                <p class="search" [hidden]="!isSearching">Buscando...</p>
+                            </div>
+                            <!--  DropDown Ends  -->
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</header>
+<section class="sect-top-abs">
+    <div class="top-abs">
+        <p>
+            Agradecemos su visita. Nos interesa su opinión y sugerencias para mejorar nuestro servicio
+        </p>
+    </div>
+</section>
+
+<router-outlet id="acces"></router-outlet>
+<app-about id="about"></app-about>
+<app-parallax-comp></app-parallax-comp>
+<app-whatsapp-icon></app-whatsapp-icon>
+
+<div class="footer bg-gray">
+    <img class="decoration-circles" src="assets/img/decoration-circles.png" alt="alternative" />
+    <div class="container">
+        <div class="row">
+            <div class="row">
+                <div class="col-lg-7 map-container">
+                    <!--end of col-->
+                    <div class="col-12 col-lg-12 map-foo">
+                        <h2>Nuestra ubicacion</h2>
+
+                        <div class="mapa-index">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3186.5045572329122!2d-57.14207818470448!3d-36.99775767990838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x959b9d0ed97e3bcb%3A0x615582488df2dd67!2sAvellaneda%2073%2C%20B7163EEA%20Gral.%20Juan%20Madariaga%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1631134833111!5m2!1ses!2sar"
+                                height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
                     </div>
                     <!--end of col-->
-    
                 </div>
-                <div class="row">
-                    <div class="social-container">
-                        <span class="fa-stack">
-                            <a href="https://www.facebook.com/ChalitaCrinigan/" target="_blank">
-                                <i class="fas fa-circle fa-stack-2x"></i>
-                                <i class="fab fa-facebook-f fa-stack-1x"></i>
-                            </a>
-                        </span>
-                        <span class="fa-stack">
-                            <a href="https://www.instagram.com/chalitacriniganpropiedades/?hl=es-la" target="_blank">
-                                <i class="fas fa-circle fa-stack-2x"></i>
-                                <i class="fab fa-instagram fa-stack-1x"></i>
-                            </a>
-                        </span>
-                        <span class="fa-stack">
-                            <a href="https://wa.me/5492267631530" target="_blank">
-                                <i class="fas fa-circle fa-stack-2x"></i>
-                                <i class="fab fa-whatsapp fa-stack-1x"></i>
-                            </a>
-                        </span>
+                <div class="col-lg-4 links-container">
+                    <div class="row">
+                        <div>
+                            <ul>
+                                <li>
+                                    <a routerLink="/alqui">Alquileres</a>
+                                </li>
+                                <li>
+                                    <a routerLink="/ventas">Ventas</a>
+                                </li>
+                                <li>
+                                    <a routerLink="/">Turismo</a>
+                                </li>
+                                <li>
+                                    <a routerLink="/">Desarrollos</a>
+                                </li>
+                                <li>
+                                    <a routerLink="/" fragment="about" (click)=onAnchorClick()>Nosotros</a>
+
+                                </li>
+                                <li>
+                                    <a href="#">Contacto</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!--end of col-->
+
+
                     </div>
+                    <!--end of row-->
+                    <!-- <div class="col-md-4 flotar">
+                            
+                        </div> -->
+                </div>
+                <!--end of col-->
+
+            </div>
+            <div class="row">
+                <div class="social-container">
+                    <span class="fa-stack">
+                        <a href="https://www.facebook.com/ChalitaCrinigan/" target="_blank">
+                            <i class="fas fa-circle fa-stack-2x"></i>
+                            <i class="fab fa-facebook-f fa-stack-1x"></i>
+                        </a>
+                    </span>
+                    <span class="fa-stack">
+                        <a href="https://www.instagram.com/chalitacriniganpropiedades/?hl=es-la" target="_blank">
+                            <i class="fas fa-circle fa-stack-2x"></i>
+                            <i class="fab fa-instagram fa-stack-1x"></i>
+                        </a>
+                    </span>
+                    <span class="fa-stack">
+                        <a href="https://wa.me/5492267631530" target="_blank">
+                            <i class="fas fa-circle fa-stack-2x"></i>
+                            <i class="fab fa-whatsapp fa-stack-1x"></i>
+                        </a>
+                    </span>
                 </div>
             </div>
         </div>
     </div>
+</div>
 <!-- </div> -->

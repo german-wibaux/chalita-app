@@ -108,6 +108,44 @@
     padding-top: 4rem;
 }
 
+.header-container {
+    height: 5rem;
+}
+
+.autocomplete-container {
+    z-index: 1;
+}
+
+.input-search-container {
+    margin-top: 1.5rem;
+}
+
+.input-search-container > .clear-btn {
+    position: relative;
+    right: 20px;
+    transition: left 0.3s;
+    color: transparent;
+    cursor: pointer;
+}
+
+.input-search-container > .show-clear-button {
+    color: black;
+}
+
+.autocomplete-body > .search {
+    width: 186px;
+}
+
+.autocomplete-body > .search > .search-result {
+    text-align: left;
+    cursor: pointer;
+    padding-left: 10px;
+}
+
+#car {
+    padding-left: 10px;
+}
+
 @media screen and (max-width:500px) {
     .searchbar {
         flex-direction: column;
@@ -126,6 +164,10 @@
         margin-top: 3rem;
     }
 
+    .header-container {
+        height: unset;
+    }
+
 }
 
 @media screen and (min-width:400px) and (max-width: 1200px) {
@@ -140,5 +182,13 @@
     .links-container {
         justify-content: center;
         margin-top: 3rem;
+    }
+
+    .header-container {
+        height: unset;
+    }
+
+    .header-container > .row {
+        align-items: center;
     }
 }

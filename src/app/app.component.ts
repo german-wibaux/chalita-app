@@ -107,7 +107,9 @@ export class AppComponent {
       }));
 
     search$.subscribe(data => {
-      this.isSearching = false
+      
+      this.isSearching = false;
+      console.log(data);
       this.searchedProperties = data;
     })
   }

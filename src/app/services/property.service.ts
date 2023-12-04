@@ -34,6 +34,9 @@ export class PropertyService {
   }  
 
   getPropertiesFiltering(binary: any, query: { location: any; property: any; operation: string; }) {
+
+    console.log('Binary value');
+    console.log(binary);
     
     switch (binary) {
       case 0: {

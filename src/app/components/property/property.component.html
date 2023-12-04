@@ -6,7 +6,7 @@
 
 
 
-                    <carousel class="d-flex justify-content-center">
+                    <carousel class="d-flex justify-content-center" [interval]="0" >
                         <slide class="slide-carousel" *ngFor="let slide of slides; let index=index">
                             <img [src]="slide" alt="image slide" class="inside-carousel" >
 

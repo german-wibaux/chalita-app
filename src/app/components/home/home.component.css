@@ -135,7 +135,7 @@
 }
 
 .custom-inside-card {
-  height: 600px;
+  height: 650px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -159,5 +159,16 @@
 
 #services {
   background-color: rgba(102, 255, 102, 0.1);
+}
+
+.img-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.img-bottom > a > img {
+  width: auto;
+  height: 13rem;
 }
 

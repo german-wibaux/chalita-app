@@ -75,7 +75,7 @@
                         </div>
                       </div>
                       <div class="img-bottom">
-                        <a href="#">
+                        <a [routerLink]="['/details' , property.id ]">
                           <img class="card-img-top" src="{{ property.images[0] }}" alt="Card image cap"
                             *ngIf="property.images">
                         </a>

@@ -88,3 +88,14 @@
     flex-direction: column;
     justify-content: space-between;
   }
+
+  .img-bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .img-bottom > a > img {
+    width: auto;
+    height: 13rem;
+  }

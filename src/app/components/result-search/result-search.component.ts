@@ -21,18 +21,19 @@ export class ResultSearchComponent implements OnInit {
         this.query.operation = params['operation'];
         this.query.property = params['property'];
         this.query.location = params['location'];
-        let binary = 0;
+        // let binary = 0;
+
+        let conditions = [];
 
         if (this.query.location != 'Localidad') 
-          binary += 1;
+          conditions.push({name: 'location', value: this.query.location})
         if (this.query.property != 'Propiedad') 
-          binary+= 2;
+          conditions.push({name: 'kindProperty', value: this.query.property})
         if (this.query.operation != 'Operación')
-          binary+= 4;
+          conditions.push({name: 'kindOperation', value: this.query.operation})
 
-        this.propertiesService!.getPropertiesFiltering(binary, this.query)!.subscribe( propertiesLocal=> {
+        this.propertiesService!.getPropertiesFiltering(conditions)!.subscribe( propertiesLocal=> {
           this.properties = [];
-
           propertiesLocal.forEach( element => {
             if (element.available) {
               this.properties.push(element);
@@ -43,6 +44,7 @@ export class ResultSearchComponent implements OnInit {
         });      
       }
     );
+    this.query = {"operation":"","property":"","location":""};
   }
 
 

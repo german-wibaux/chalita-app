@@ -130,8 +130,10 @@ export class AppComponent {
   }
 
   onSetKindProperty(property: any) {
-    if (property.innerText === 'Terreno' || property.innerText === 'Loteo') {
+    if (property.innerText === 'Terreno' || property.innerText === 'Lote') {
       this.kindProperty = 'Terreno/Lote'
+    } else if (property.innerText === 'Loteo') {
+      this.kindProperty = 'Loteo'
     } else {
       this.kindProperty = property.innerText;
     }

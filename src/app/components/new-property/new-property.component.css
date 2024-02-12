@@ -1,0 +1,11 @@
+.color-white {
+    color: white;
+}
+
+.images-10 > div > div > p, a {
+    color: white;
+}
+
+.images-10 > div > div > input {
+    color: white;
+}

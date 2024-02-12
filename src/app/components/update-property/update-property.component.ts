@@ -8,6 +8,8 @@ import { switchMap, tap, finalize } from 'rxjs/operators';
 import { UrlsPhotoService } from 'src/app/services/urls-photo.service';
 import { UrldeletedInterface } from 'src/app/models/urldeletedInterface';
 import { AngularFireStorage } from '@angular/fire/compat/storage';
+import { LocationInterface } from 'src/app/models/locationInterface';
+import { LocationService } from 'src/app/services/location.service';
 
 @Component({
   selector: 'app-update-property',
@@ -44,30 +46,37 @@ export class UpdatePropertyComponent implements OnInit {
   uploadPercent22: any;
   uploadPercent23: any;
   uploadPercent24: any;
+  selectKindProperty: any = '';
+  selectLocation: any = '';
+  selectOperation: any = '';
 
   url: UrldeletedInterface = {
     url: ''
   }
 
-  constructor(private propertyService: PropertyService , 
+  locations: LocationInterface[] = [];
+
+  constructor(private propertyService: PropertyService,
               private route: ActivatedRoute, 
               private router:Router,
               private storage: AngularFireStorage,
-              private urlphotoService: UrlsPhotoService) { }
+              private urlphotoService: UrlsPhotoService,
+              private locationService: LocationService) { }
 
   ngOnInit() {
-    // this.propertyService.getProperty()
     this.route.params.subscribe( result => {
       this.propertyService.getProperty(result['id']).subscribe( resultProp => {
-       this.property = resultProp;
-      //  this.images = this.property.imagen;
-      //  for (let i = 0; i < this.images.length; i++) {
-      //    this.slides.push({
-      //      image: this.images[i]
-      //    });
-      //  }
-             
+        this.property = resultProp;
+        this.selectLocation = this.property.location;
+        this.selectOperation = this.property.kindOperation;
+        this.selectKindProperty = this.property.kindProperty;
+        // this.onChangeProp(0,this.property.kindProperty);
       })
+    });
+
+    this.locationService.getLocations().subscribe(locations => {
+          
+      this.locations = locations.sort((a, b) => (a.name! < b.name! ? -1 : 1));
     });
   }
 
@@ -1129,6 +1138,25 @@ export class UpdatePropertyComponent implements OnInit {
     this.property!.images![index] = 'borrado';
     this.url.url= url;
     this.urlphotoService.addUrl(this.url);
+  }
+
+  onChangeProp(event: any) {
+    // if (option === 0) {
+    //   this.selectKindProperty = event;
+    // } else {
+      this.property!.kindProperty = event.target.value;
+    //   console.log('onChangeProp');
+    //   console.log(this.property?.kindProperty);
+    // }
+    
+  }
+
+  onChangeLoca(event: any) {
+    this.property!.location = event.target.value;
+  }
+
+  onChangeOper(event: any) {
+    this.property!.kindOperation = event.target.value;
   }
 
 }

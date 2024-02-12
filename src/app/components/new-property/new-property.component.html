@@ -3,8 +3,8 @@
         <button type="button" class="btn btn-primary" routerLink='/edit'>Volver atras</button>
     </div>
     <div class="text-center mb-5">
-        <h1 class="h2 mb-2">Crear una nueva propiedad</h1>
-        <span>No hay campos obligatorios lo que se cargue es lo que se vera en la pagina</span>
+        <h1 class="h2 mb-2 color-white">Crear una nueva propiedad</h1>
+        <span class="color-white" >No hay campos obligatorios lo que se cargue es lo que se vera en la pagina</span>
     </div>
     <div class="row justify-content-center">
         <div class="col-12 col-lg-9">
@@ -30,10 +30,7 @@
                     </div>
                 </div>
                 <div class="form-row form-group">
-                    <!-- <div class="col">
-                  <input [(ngModel)]='property.description'  [ngModelOptions]="{standalone: true}" #descripcion='ngModel' class="form-control form-control-lg" type="text"  placeholder="Descripcion" />            
-              </div> -->
-                    <select (change)="onChangeProp($event)" class="custom-select">
+                    <select (change)="onChangeProp($event)" class="form-select form-control form-control-lg">
                         <option selected disabled hidden>Tipo de propiedad</option>
                         <option value="Casa">Casa</option>
                         <option value="Departamento">Departamento</option>
@@ -52,7 +49,7 @@
                     <!-- <div class="col">
                   <input [(ngModel)]='property.description'  [ngModelOptions]="{standalone: true}" #descripcion='ngModel' class="form-control form-control-lg" type="text"  placeholder="Descripcion" />            
               </div> -->
-                    <select (change)="onChangeLoca($event)" class="custom-select">
+                    <select (change)="onChangeLoca($event)" class="form-select form-control form-control-lg">
                         <option selected disabled hidden>Localidad</option>
                         <option value="{{location.name}}" *ngFor="let location of locations" > {{ location.name }} </option>
 
@@ -82,7 +79,7 @@
                     <!-- <div class="col">
                   <input [(ngModel)]='property.description'  [ngModelOptions]="{standalone: true}" #descripcion='ngModel' class="form-control form-control-lg" type="text"  placeholder="Descripcion" />            
               </div> -->
-                    <select (change)="onChangeOper($event)" class="custom-select">
+                    <select (change)="onChangeOper($event)" class="form-select form-control form-control-lg">
                         <option selected disabled hidden>Tipo de operación</option>
                         <option value="Venta">Venta</option>
                         <option value="Alquiler permanente">Alquiler permanente</option>
@@ -126,7 +123,7 @@
 
 
                 <div class="row">
-                    <div class="col-sm">
+                    <div class="col-sm images-10">
                         <div class="form-row form-group">
                             <div class="col">
                                 <p>Imagen 1</p>
@@ -297,7 +294,7 @@
                                 (click)="deletePhoto(property!.images![8],8)">Eliminar</button>
                         </div>
                     </div>
-                    <div class="col-sm">
+                    <div class="col-sm images-10">
                         <div class="form-row form-group">
                             <div class="col">
                                 <p>Imagen 10</p>
@@ -440,7 +437,7 @@
                     </div>
 
 
-                    <div class="col-sm">
+                    <div class="col-sm images-10">
                         <div class="form-row form-group">
                             <div class="col">
                                 <p>Imagen 18</p>
